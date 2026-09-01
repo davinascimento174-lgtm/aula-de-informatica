@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Física Quântica | Moema Távora & Instituto Escolar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f0ed;
+            background-image: 
+                radial-gradient(ellipse at 10% 20%, #faf5f2 0%, #f5f0ed 70%),
+                radial-gradient(ellipse at 90% 80%, #ece3de 0%, transparent 60%);
+            color: #2a1a1a;
+            line-height: 1.7;
+            padding: 12px;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 100%;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 32px;
+            border: 1px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 20px 60px rgba(80, 30, 30, 0.06), 0 4px 20px rgba(0, 0, 0, 0.02);
+            padding: 16px 16px 24px;
+            transition: all 0.3s;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(200, 180, 175, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #8B3A3A, #6B2A2A);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, #9B4A4A, #7B3A3A);
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-bottom: 2px solid rgba(139, 58, 58, 0.06);
+            padding-bottom: 14px;
+            margin-bottom: 20px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 i {
+            color: #8B3A3A;
+            font-size: 1.6rem;
+        }
+
+        .logo h1 span {
+            color: #6B2A2A;
+        }
+
+        .logo .sub {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #8B3A3A;
+            background: rgba(139, 58, 58, 0.04);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            width: fit-content;
+        }
+
+        .school-badge {
+            background: rgba(139, 58, 58, 0.04);
+            padding: 6px 16px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: #8B3A3A;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            width: fit-content;
+        }
+
+        .school-badge i {
+            color: #8B3A3A;
+        }
+
+        /* ===== NAVEGAÇÃO ===== */
+        .nav-links {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 4px 18px;
+            margin: 10px 0 14px;
+            padding: 4px 0 10px;
+            border-bottom: 2px solid rgba(139, 58, 58, 0.04);
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #5a3a3a;
+            padding: 6px 4px 8px;
+            border-bottom: 3px solid transparent;
+            transition: 0.2s;
+            font-size: 0.82rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+        }
+
+        .nav-links a i {
+            font-size: 0.75rem;
+            color: #8B3A3A;
+        }
+
+        .nav-links a:hover, .nav-links a:active {
+            border-bottom-color: #8B3A3A;
+            color: #2a1a1a;
+        }
+
+        /* ===== HERO ===== */
+        .hero-card {
+            background: linear-gradient(135deg, #faf2ef, #f0e4df);
+            border-radius: 24px;
+            padding: 24px 20px 20px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 58, 58, 0.03), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-card h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card h2 i {
+            color: #8B3A3A;
+            font-size: 1.4rem;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            margin-top: 8px;
+            color: #4a3a3a;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-card .highlight {
+            color: #8B3A3A;
+            font-weight: 700;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 30px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(139, 58, 58, 0.06);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #5a3a3a;
+        }
+
+        .hero-stats .stat i {
+            color: #8B3A3A;
+            font-size: 1.1rem;
+        }
+
+        .hero-stats .stat strong {
+            color: #2a1a1a;
+            font-weight: 700;
+        }
+
+        /* ===== SEÇÕES ===== */
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #2a1a1a;
+            margin: 28px 0 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(139, 58, 58, 0.06);
+        }
+
+        .section-title i {
+            color: #8B3A3A;
+            font-size: 1.3rem;
+        }
+
+        .section-title .badge {
+            background: rgba(139, 58, 58, 0.04);
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #8B3A3A;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== GRID PRINCIPAL ===== */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 22px;
+            padding: 20px 18px 22px;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            backdrop-filter: blur(2px);
+            transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.02);
+        }
+
+        .info-card:hover {
+            border-color: rgba(139, 58, 58, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(139, 58, 58, 0.04);
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h3 i {
+            color: #8B3A3A;
+            font-size: 1.2rem;
+            width: 1.8rem;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            margin-bottom: 10px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .info-card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #4a3a3a;
+        }
+
+        .info-card li i {
+            color: #8B3A3A;
+            width: 1.2rem;
+            font-size: 0.85rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .info-card li .tag {
+            background: rgba(139, 58, 58, 0.04);
+            padding: 0 10px;
+            border-radius: 30px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: #8B3A3A;
+            margin-left: 4px;
+        }
+
+        .btn-pesquisa {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #8B3A3A, #6B2A2A);
+            color: white;
+            font-weight: 600;
+            padding: 12px 22px;
+            border-radius: 60px;
+            text-decoration: none;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            border: none;
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.15);
+            width: 100%;
+            justify-content: center;
+            transition: 0.25s;
+        }
+
+        .btn-pesquisa:hover {
+            background: linear-gradient(135deg, #9B4A4A, #7B3A3A);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(139, 58, 58, 0.20);
+        }
+
+        .btn-pesquisa:active {
+            transform: scale(0.97);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.10);
+        }
+
+        .btn-pesquisa i {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ===== PESQUISAS ===== */
+        .pesquisas-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 22px;
+            padding: 20px 18px 22px;
+            margin: 16px 0;
+            border-left: 5px solid #8B3A3A;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            border-left-width: 5px;
+        }
+
+        .pesquisa-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            transition: 0.25s;
+            box-shadow: 0 2px 4px rgba(139, 58, 58, 0.02);
+        }
+
+        .pesquisa-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .pesquisa-item:hover {
+            border-color: rgba(139, 58, 58, 0.12);
+            box-shadow: 0 4px 12px rgba(139, 58, 58, 0.04);
+        }
+
+        .pesquisa-item .titulo-pesq {
+            font-weight: 700;
+            color: #2a1a1a;
+            font-size: 0.98rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pesquisa-item .titulo-pesq i {
+            color: #8B3A3A;
+            font-size: 0.85rem;
+        }
+
+        .pesquisa-item .desc-pesq {
+            font-size: 0.88rem;
+            color: #4a3a3a;
+            margin-top: 6px;
+            padding-left: 24px;
+        }
+
+        .pesquisa-item .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 2px 14px;
+            border-radius: 30px;
+            background: rgba(139, 58, 58, 0.04);
+            color: #8B3A3A;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .pesquisa-item .status.em-andamento {
+            background: rgba(200, 120, 50, 0.08);
+            color: #b87a2a;
+        }
+
+        .pesquisa-item .status.concluido {
+            background: rgba(30, 180, 80, 0.06);
+            color: #1a7a4a;
+        }
+
+        .pesquisa-item .status.planejado {
+            background: rgba(139, 58, 58, 0.04);
+            color: #8B3A3A;
+        }
+
+        .pesquisa-item .meta-info {
+            font-size: 0.75rem;
+            color: #6a5a5a;
+            margin-top: 6px;
+            padding-left: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .pesquisa-item .meta-info i {
+            margin-right: 4px;
+            color: #8B3A3A;
+        }
+
+        /* ===== ARTIGOS / CONTEÚDO ===== */
+        .artigo-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 22px;
+            padding: 20px 18px 22px;
+            margin: 0;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.02);
+            transition: 0.25s;
+        }
+
+        .artigo-box:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+        }
+
+        .artigo-box h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .artigo-box h4 i {
+            color: #8B3A3A;
+        }
+
+        .artigo-box p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            margin-bottom: 10px;
+        }
+
+        .artigo-box ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .artigo-box li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: #4a3a3a;
+        }
+
+        .artigo-box li i {
+            color: #8B3A3A;
+            width: 1.2rem;
+            font-size: 0.8rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ===== LABORATÓRIO ===== */
+        .lab-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .lab-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 22px;
+            padding: 20px 18px 22px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            backdrop-filter: blur(2px);
+            transition: 0.3s;
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.02);
+        }
+
+        .lab-card:hover {
+            border-color: rgba(139, 58, 58, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .lab-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .lab-card h3 i {
+            color: #8B3A3A;
+            font-size: 1.2rem;
+            width: 1.8rem;
+        }
+
+        .lab-card p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            margin-bottom: 12px;
+        }
+
+        .lab-card ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .lab-card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #4a3a3a;
+        }
+
+        .lab-card li i {
+            color: #8B3A3A;
+            width: 1.2rem;
+            font-size: 0.85rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .btn-lab {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #8B3A3A, #6B2A2A);
+            color: white;
+            font-weight: 600;
+            padding: 12px 22px;
+            border-radius: 60px;
+            text-decoration: none;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            border: none;
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.12);
+            width: 100%;
+            justify-content: center;
+            transition: 0.25s;
+        }
+
+        .btn-lab:hover {
+            background: linear-gradient(135deg, #9B4A4A, #7B3A3A);
+            transform: scale(1.02);
+        }
+
+        .btn-lab:active {
+            transform: scale(0.97);
+        }
+
+        /* ===== EQUIPE ===== */
+        .equipe-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .membro-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 16px;
+            padding: 14px 14px 16px;
+            border: 1px solid rgba(139, 58, 58, 0.03);
+            text-align: center;
+            transition: 0.25s;
+            box-shadow: 0 2px 4px rgba(139, 58, 58, 0.02);
+        }
+
+        .membro-card:hover {
+            border-color: rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 12px rgba(139, 58, 58, 0.03);
+        }
+
+        .membro-card .avatar {
+            font-size: 2rem;
+            color: #8B3A3A;
+            margin-bottom: 4px;
+        }
+
+        .membro-card .nome {
+            font-weight: 700;
+            color: #2a1a1a;
+            font-size: 0.85rem;
+        }
+
+        .membro-card .funcao {
+            font-size: 0.7rem;
+            color: #6a4a4a;
+        }
+
+        /* ===== FOOTER ===== */
+        .recursos-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 28px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(139, 58, 58, 0.04);
+            font-size: 0.8rem;
+            color: #6a4a4a;
+        }
+
+        .recursos-footer .contato {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 16px;
+        }
+
+        .recursos-footer .contato i {
+            margin-right: 4px;
+            color: #8B3A3A;
+        }
+
+        .recursos-footer a {
+            color: #8B3A3A;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .recursos-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .recursos-footer .creditos {
+            opacity: 0.5;
+            font-size: 0.7rem;
+            color: #6a5a5a;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .footer-links a {
+            color: #6a4a4a;
+            text-decoration: none;
+            font-size: 0.78rem;
+        }
+
+        .footer-links a:hover {
+            color: #8B3A3A;
+        }
+
+        /* ===== INFOS EXTRAS ===== */
+        .extra-infos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(139, 58, 58, 0.04);
+            font-size: 0.7rem;
+            color: #6a5a5a;
+            justify-content: center;
+        }
+
+        .extra-infos span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .extra-infos i {
+            color: #8B3A3A;
+        }
+
+        .aviso-quantico {
+            text-align: center;
+            margin-top: 18px;
+            font-weight: 500;
+            color: #8B3A3A;
+            background: rgba(139, 58, 58, 0.02);
+            border-radius: 60px;
+            padding: 10px 18px;
+            max-width: 100%;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            flex-wrap: wrap;
+        }
+
+        .aviso-quantico i {
+            color: #8B3A3A;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (min-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                max-width: 720px;
+                padding: 24px 28px 30px;
+            }
+
+            .top-bar {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2col {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .grid-3col {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 16px;
+            }
+
+            .lab-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .btn-pesquisa, .btn-lab {
+                width: auto;
+                padding: 10px 28px;
+            }
+
+            .recursos-footer {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .extra-infos {
+                justify-content: space-between;
+            }
+
+            .equipe-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 900px) {
+            body {
+                padding: 30px;
+            }
+
+            .container {
+                max-width: 1150px;
+                padding: 36px 44px 40px;
+            }
+
+            .logo h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-card h2 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2col {
+                gap: 28px;
+            }
+
+            .lab-grid {
+                gap: 28px;
+            }
+
+            .pesquisas-box {
+                padding: 24px 26px 28px;
+            }
+
+            .equipe-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ===== TOQUE ===== */
+        a, .btn-pesquisa, .btn-lab, .pesquisa-item, .info-card, .lab-card, .membro-card, .artigo-box {
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(139, 58, 58, 0.02);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="top-bar">
+        <div class="logo">
+            <h1><i class="fas fa-atom"></i> Quântica<span>Lab</span></h1>
+            <div class="sub"><i class="fas fa-flask"></i> Moema Távora · Instituto Escolar</div>
+        </div>
+        <div class="school-badge">
+            <i class="fas fa-graduation-cap"></i> Pesquisa & Inovação
+        </div>
+    </header>
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#inicio"><i class="fas fa-house-chimney"></i> Início</a>
+        <a href="#conceitos"><i class="fas fa-brain"></i> Conceitos</a>
+        <a href="#pesquisas"><i class="fas fa-microscope"></i> Pesquisas</a>
+        <a href="#artigos"><i class="fas fa-newspaper"></i> Artigos</a>
+        <a href="#laboratorio"><i class="fas fa-flask"></i> Lab</a>
+        <a href="#equipe"><i class="fas fa-users"></i> Equipe</a>
+        <a href="#recursos"><i class="fas fa-circle-info"></i> Recursos</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="inicio" class="hero-card">
+        <h2><i class="fas fa-superpowers"></i> Onde a realidade se desfaz</h2>
+        <p>
+            <span class="highlight">⚛️ Física Quântica</span> — o estudo dos menores componentes do universo. 
+            Na <strong>Escola Moema Távora</strong> e no <strong>Instituto Escolar</strong>, 
+            exploramos partículas, ondas e probabilidades para entender o mundo além do que os olhos veem.
+        </p>
+        <p style="margin-top: 6px; font-size: 0.9rem; color: #6a4a4a;">
+            <i class="fas fa-arrow-right" style="color: #8B3A3A;"></i> Participe das nossas pesquisas e descubra o universo quântico!
+        </p>
+        
+    </section>
+
+    <!-- ===== CONCEITOS FUNDAMENTAIS ===== -->
+    <h2 class="section-title" id="conceitos">
+        <i class="fas fa-brain"></i> Conceitos Fundamentais
+        <span class="badge">Teoria Quântica</span>
+    </h2>
+
+    <div class="grid-3col">
+        <article class="info-card">
+            <h3><i class="fas fa-wave-square"></i> Dualidade</h3>
+            <p>Partículas podem se comportar como ondas e vice-versa, dependendo de como são observadas.</p>
+            <ul>
+                <li><i class="fas fa-circle"></i> Partícula <span class="tag">corpúsculo</span></li>
+                <li><i class="fas fa-wave-sine"></i> Onda <span class="tag">frequência</span></li>
+                <li><i class="fas fa-arrow-right-arrow-left"></i> Complementaridade</li>
+                <li><i class="fas fa-lightbulb"></i> Experimento da fenda dupla</li>
+            </ul>
+            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Explorar dualidade</a>
+        </article>
+
+        <article class="info-card">
+            <h3><i class="fas fa-dice"></i> Incerteza</h3>
+            <p>Quanto mais sabemos sobre a posição de uma partícula, menos sabemos sobre seu momento.</p>
+            <ul>
+                <li><i class="fas fa-ruler-combined"></i> Posição × Momento</li>
+                <li><i class="fas fa-clock"></i> Energia × Tempo</li>
+                <li><i class="fas fa-chart-line"></i> Princípio de Heisenberg</li>
+                <li><i class="fas fa-eye"></i> Observador influencia</li>
+            </ul>
+            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Entender incerteza</a>
+        </article>
+
+        <article class="info-card">
+            <h3><i class="fas fa-link"></i> Emaranhamento</h3>
+            <p>Partículas emaranhadas permanecem conectadas instantaneamente, independentemente da distância.</p>
+            <ul>
+                <li><i class="fas fa-arrows-spin"></i> Correlação quântica</li>
+                <li><i class="fas fa-bolt"></i> Ação à distância</li>
+                <li><i class="fas fa-cubes"></i> Estados emaranhados</li>
+                <li><i class="fas fa-quote-right"></i> "Spooky action at a distance"</li>
+            </ul>
+            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Ver emaranhamento</a>
+        </article>
+    </div>
+
+    <!-- ===== SUPERPOSIÇÃO E TÚNEL ===== -->
+    <div class="grid-2col">
+        <article class="info-card">
+            <h3><i class="fas fa-layer-group"></i> Superposição</h3>
+            <p>Uma partícula pode existir em múltiplos estados ao mesmo tempo até ser medida.</p>
+            <ul>
+                <li><i class="fas fa-code-branch"></i> Múltiplos estados simultâneos</li>
+                <li><i class="fas fa-chart-pie"></i> Probabilidade de colapso</li>
+                <li><i class="fas fa-computer"></i> Qubits em computação quântica</li>
+                <li><i class="fas fa-gauge-high"></i> Interferência quântica</li>
+            </ul>
+            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Explorar superposição</a>
+        </article>
+
+        <article class="info-card">
+            <h3><i class="fas fa-arrow-right-through"></i> Efeito Túnel</h3>
+            <p>Partículas podem atravessar barreiras que, pela física clássica, seriam intransponíveis.</p>
+            <ul>
+                <li><i class="fas fa-shield"></i> Barreira de potencial</li>
+                <li><i class="fas fa-wave-sine"></i> Função de onda</li>
+                <li><i class="fas fa-microchip"></i> Aplicações em diodos</li>
+                <li><i class="fas fa-radio"></i> Microscópio de tunelamento</li>
+            </ul>
+            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Ver efeito túnel</a>
+        </article>
+    </div>
+
+    <!-- ===== PESQUISAS ===== -->
+    <h2 class="section-title" id="pesquisas">
+        <i class="fas fa-microscope"></i> Pesquisas em Andamento
+        <span class="badge">Projetos Ativos</span>
+    </h2>
+
+    <section class="pesquisas-box">
+        <div class="pesquisa-item">
+            <div class="titulo-pesq">
+                <i class="fas fa-quote-right"></i> Emaranhamento quântico em laboratório
+                <span class="status em-andamento"><i class="fas fa-spinner fa-pulse"></i> Em andamento</span>
+            </div>
+            <div class="desc-pesq">
+                Investigando como partículas podem se conectar instantaneamente através do emaranhamento quântico. O projeto utiliza detectores de fótons e analisadores de polarização para medir correlações quânticas em tempo real.
+            </div>
+            <div class="meta-info">
+                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo, Victoria Régia, Lorena Teixeira, Pedro Lucas · 2 orientadores</span>
+                <span><i class="fas fa-calendar"></i> Início: Mar/2026 · Previsão: Dez/2026</span>
+                <span><i class="fas fa-flask"></i> Lab de Óptica Quântica</span>
+            </div>
+        </div>
+
+        <div class="pesquisa-item">
+            <div class="titulo-pesq">
+                <i class="fas fa-quote-right"></i> Computação quântica com qubits supercondutores
+                <span class="status em-andamento"><i class="fas fa-spinner fa-pulse"></i> Em andamento</span>
+            </div>
+            <div class="desc-pesq">
+                Simulação de algoritmos quânticos utilizando qubits supercondutores. O projeto inclui programação de portas lógicas quânticas e implementação do algoritmo de Deutsch-Jozsa.
+            </div>
+            <div class="meta-info">
+                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo · 1 orientador</span>
+                <span><i class="fas fa-calendar"></i> Início: Fev/2026 · Previsão: Nov/2026</span>
+                <span><i class="fas fa-desktop"></i> Lab de Computação</span>
+            </div>
+        </div>
+
+        <div class="pesquisa-item">
+            <div class="titulo-pesq">
+                <i class="fas fa-quote-right"></i> Efeito túnel quântico em nanomateriais
+                <span class="status concluido"><i class="fas fa-check-circle"></i> Concluído</span>
+            </div>
+            <div class="desc-pesq">
+                Estudo do tunelamento quântico em diodos de tunelamento ressonante e sua aplicação em dispositivos eletrônicos de alta frequência. Pesquisa apresentada na Feira de Ciências 2025.
+            </div>
+            <div class="meta-info">
+                <span><i class="fas fa-users"></i> Equipe: Victoria Régia, Lorena Teixeira, Pedro Lucas · 1 orientador</span>
+                <span><i class="fas fa-calendar"></i> Concluído: Nov/2025</span>
+                <span><i class="fas fa-trophy"></i> 2º lugar na Feira de Ciências</span>
+            </div>
+        </div>
+
+        <div class="pesquisa-item">
+            <div class="titulo-pesq">
+                <i class="fas fa-quote-right"></i> Superposição quântica e interferência de fótons
+                <span class="status planejado"><i class="fas fa-clock"></i> Planejado</span>
+            </div>
+            <div class="desc-pesq">
+                Estudo teórico-experimental sobre superposição de estados quânticos e padrões de interferência em experimentos de fenda dupla com fótons únicos.
+            </div>
+            <div class="meta-info">
+                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo · 2 orientadores</span>
+                <span><i class="fas fa-calendar"></i> Previsto: Ago/2026 · Duração: 6 meses</span>
+                <span><i class="fas fa-flask"></i> Lab de Óptica</span>
+            </div>
+        </div>
+
+        <div class="pesquisa-item">
+            <div class="titulo-pesq">
+                <i class="fas fa-quote-right"></i> Criptografia quântica e distribuição de chaves
+                <span class="status planejado"><i class="fas fa-clock"></i> Planejado</span>
+            </div>
+            <div class="desc-pesq">
+                Desenvolvimento de um protótipo de distribuição quântica de chaves (QKD) utilizando polarização de fótons para comunicação segura.
+            </div>
+            <div class="meta-info">
+                <span><i class="fas fa-users"></i> Equipe: Victoria Régia, Lorena Teixeira, Pedro Lucas · 1 orientador</span>
+                <span><i class="fas fa-calendar"></i> Previsto: Set/2026 · Duração: 8 meses</span>
+                <span><i class="fas fa-lock"></i> Parceria com Instituto Escolar</span>
+            </div>
+        </div>
+
+        <div style="margin-top: 18px; text-align: center;">
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A); max-width: 400px; margin: 0 auto;">
+                <i class="fas fa-flask"></i> Ver todas as pesquisas (12 projetos)
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== ARTIGOS E CONTEÚDO ===== -->
+    <h2 class="section-title" id="artigos">
+        <i class="fas fa-newspaper"></i> Artigos e Conteúdo
+        <span class="badge">Publicações</span>
+    </h2>
+
+    <div class="grid-2col">
+        <div class="artigo-box">
+            <h4><i class="fas fa-pen-fancy"></i> O que é Física Quântica?</h4>
+            <p>Uma introdução aos princípios fundamentais da mecânica quântica, desde a quantização da energia até a função de onda e a equação de Schrödinger.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Quantização de energia (Planck)</li>
+                <li><i class="fas fa-check-circle"></i> Função de onda e probabilidade</li>
+                <li><i class="fas fa-check-circle"></i> Equação de Schrödinger</li>
+                <li><i class="fas fa-check-circle"></i> Interpretação de Copenhagen</li>
+            </ul>
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        </div>
+
+        <div class="artigo-box">
+            <h4><i class="fas fa-history"></i> História da Mecânica Quântica</h4>
+            <p>Uma viagem pela história da física quântica, desde os experimentos de Planck e Einstein até o desenvolvimento da teoria moderna.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Planck e o quantum de ação</li>
+                <li><i class="fas fa-check-circle"></i> Einstein e o efeito fotoelétrico</li>
+                <li><i class="fas fa-check-circle"></i> Bohr e o modelo atômico</li>
+                <li><i class="fas fa-check-circle"></i> Heisenberg, Schrödinger e Dirac</li>
+            </ul>
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        </div>
+    </div>
+
+    <div class="grid-3col">
+        <div class="artigo-box">
+            <h4><i class="fas fa-computer"></i> Computação Quântica</h4>
+            <p>Como os qubits revolucionam a computação, permitindo cálculos exponencialmente mais rápidos que computadores clássicos.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Qubits vs bits</li>
+                <li><i class="fas fa-check-circle"></i> Portas lógicas quânticas</li>
+                <li><i class="fas fa-check-circle"></i> Algoritmos quânticos</li>
+                <li><i class="fas fa-check-circle"></i> Aplicações práticas</li>
+            </ul>
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        </div>
+
+        <div class="artigo-box">
+            <h4><i class="fas fa-shield-halved"></i> Criptografia Quântica</h4>
+            <p>A segurança da informação na era quântica, utilizando princípios da mecânica quântica para garantir comunicações invioláveis.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Distribuição quântica de chaves</li>
+                <li><i class="fas fa-check-circle"></i> Teletransporte quântico</li>
+                <li><i class="fas fa-check-circle"></i> Segurança incondicional</li>
+                <li><i class="fas fa-check-circle"></i> Ameaças quânticas</li>
+            </ul>
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        </div>
+
+        <div class="artigo-box">
+            <h4><i class="fas fa-flask"></i> Experimentos Quânticos</h4>
+            <p>Os experimentos mais importantes da física quântica e como você pode reproduzir alguns deles no laboratório da escola.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Fenda dupla</li>
+                <li><i class="fas fa-check-circle"></i> Efeito fotoelétrico</li>
+                <li><i class="fas fa-check-circle"></i> Experimento de Stern-Gerlach</li>
+                <li><i class="fas fa-check-circle"></i> Emaranhamento de fótons</li>
+            </ul>
+            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        </div>
+    </div>
+
+    <!-- ===== LABORATÓRIO ===== -->
+    <h2 class="section-title" id="laboratorio">
+        <i class="fas fa-flask"></i> Laboratório e Instituto
+        <span class="badge">Infraestrutura</span>
+    </h2>
+
+    <div class="lab-grid">
+        <div class="lab-card">
+            <h3><i class="fas fa-flask"></i> Lab Quântico</h3>
+            <p>Nosso laboratório dedicado à pesquisa quântica, equipado com instrumentos de precisão e computação de alto desempenho.</p>
+            <ul>
+                <li><i class="fas fa-microchip"></i> Simulador de qubits (20+ qubits)</li>
+                <li><i class="fas fa-laser"></i> Sistema de óptica quântica</li>
+                <li><i class="fas fa-chart-bar"></i> Analisador de probabilidades</li>
+                <li><i class="fas fa-desktop"></i> 5 estações de trabalho</li>
+                <li><i class="fas fa-camera"></i> Detectores de fótons únicos</li>
+                <li><i class="fas fa-code"></i> Software de simulação quântica</li>
+            </ul>
+            <a href="#" class="btn-lab"><i class="fas fa-chevron-circle-right"></i> Conheça o laboratório</a>
+        </div>
+
+        <div class="lab-card">
+            <h3><i class="fas fa-graduation-cap"></i> Instituto Escolar</h3>
+            <p>O Instituto Escolar é parceiro da Escola Moema Távora em pesquisas quânticas e projetos de inovação educacional.</p>
+            <ul>
+                <li><i class="fas fa-seedling"></i> <strong>Instituto Escolar</strong> – pesquisa e inovação</li>
+                <li><i class="fas fa-handshake"></i> Parceria ativa com a Moema Távora</li>
+                <li><i class="fas fa-globe"></i> Projetos de inovação quântica</li>
+                <li><i class="fas fa-calendar-check"></i> Workshops mensais abertos</li>
+                <li><i class="fas fa-trophy"></i> Premiações em feiras de ciência</li>
+                <li><i class="fas fa-link"></i> Rede de pesquisa colaborativa</li>
+            </ul>
+            <a href="#" class="btn-lab"><i class="fas fa-chevron-circle-right"></i> Sobre o Instituto</a>
+        </div>
+    </div>
+
+    <!-- ===== EQUIPE ===== -->
+    <h2 class="section-title" id="equipe">
+        <i class="fas fa-users"></i> Nossa Equipe
+        <span class="badge">Pesquisadores</span>
+    </h2>
+
+    <div class="equipe-grid">
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
+            <div class="nome">Prof. Bruno Matos</div>
+            <div class="funcao">Coordenador · Física Quântica</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Marina Alves</div>
+            <div class="funcao">Pesquisadora · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Eshila Lima</div>
+            <div class="funcao">Pesquisadora · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Davi Ferreira</div>
+            <div class="funcao">Pesquisador · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Emily Diogo</div>
+            <div class="funcao">Pesquisadora · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Victoria Régia</div>
+            <div class="funcao">Pesquisadora · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Lorena Teixeira</div>
+            <div class="funcao">Pesquisadora · 1º ano</div>
+        </div>
+        <div class="membro-card">
+            <div class="avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="nome">Pedro Lucas</div>
+            <div class="funcao">Pesquisador · 1º ano</div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="recursos" class="recursos-footer">
+        <div class="contato">
+            <i class="fas fa-envelope"></i> <a href="mailto:quantica@moematavora.edu">quantica@moematavora.edu</a>
+            <i class="fas fa-phone" style="margin-left: 4px;"></i> <a href="tel:+5585999999999">(85) 9 9999-9999</a>
+        </div>
+        <div class="footer-links">
+            <a href="#inicio"><i class="fas fa-arrow-up"></i> Topo</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> Publicações</a>
+            <a href="#"><i class="fas fa-calendar"></i> Calendário</a>
+        </div>
+        <div class="creditos">
+            <i class="fas fa-atom"></i> Moema Távora · Instituto Escolar 2026
+        </div>
+    </footer>
+
+    <!-- ===== INFOS EXTRAS ===== -->
+    <div class="extra-infos">
+        <span><i class="fas fa-map-pin"></i> Lab 3 · 2º andar · Bloco B</span>
+        <span><i class="fas fa-clock"></i> Seg–Sex, 7h–19h</span>
+        <span><i class="fas fa-users-between-lines"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Grupo de pesquisa</a></span>
+        <span><i class="fas fa-file-pdf"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Publicações</a></span>
+        <span><i class="fas fa-chalkboard"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Slides das aulas</a></span>
+    </div>
+
+    <!-- ===== AVISO QUÂNTICO ===== -->
+    <div class="aviso-quantico">
+        <i class="fas fa-infinity"></i>
+        A realidade é probabilística — e você faz parte dela.
+        <i class="fas fa-infinity"></i>
+    </div>
+
+</div> <!-- fim container -->
+</body>
+</html>
