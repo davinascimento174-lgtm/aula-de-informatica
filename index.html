@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Física Quântica | Moema Távora & Instituto Escolar</title>
+    <title>Física Clássica × Quântica | Moema Távora & Instituto Escolar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
@@ -132,7 +132,7 @@
             display: flex;
             flex-wrap: nowrap;
             overflow-x: auto;
-            gap: 4px 18px;
+            gap: 4px 14px;
             margin: 10px 0 14px;
             padding: 4px 0 10px;
             border-bottom: 2px solid rgba(139, 58, 58, 0.04);
@@ -151,16 +151,16 @@
             padding: 6px 4px 8px;
             border-bottom: 3px solid transparent;
             transition: 0.2s;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             white-space: nowrap;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             flex-shrink: 0;
         }
 
         .nav-links a i {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #8B3A3A;
         }
 
@@ -252,6 +252,16 @@
             font-weight: 700;
         }
 
+        .hero-stats .stat .data-destaque {
+            background: rgba(139, 58, 58, 0.06);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #8B3A3A;
+            margin-left: 2px;
+        }
+
         /* ===== SEÇÕES ===== */
         .section-title {
             font-size: 1.2rem;
@@ -280,7 +290,7 @@
             letter-spacing: 0.3px;
         }
 
-        /* ===== GRID PRINCIPAL ===== */
+        /* ===== GRID ===== */
         .grid-2col {
             display: grid;
             grid-template-columns: 1fr;
@@ -365,286 +375,774 @@
             margin-left: 4px;
         }
 
-        .btn-pesquisa {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #8B3A3A, #6B2A2A);
-            color: white;
-            font-weight: 600;
-            padding: 12px 22px;
-            border-radius: 60px;
-            text-decoration: none;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            border: none;
-            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.15);
-            width: 100%;
-            justify-content: center;
-            transition: 0.25s;
-        }
-
-        .btn-pesquisa:hover {
-            background: linear-gradient(135deg, #9B4A4A, #7B3A3A);
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(139, 58, 58, 0.20);
-        }
-
-        .btn-pesquisa:active {
-            transform: scale(0.97);
-            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.10);
-        }
-
-        .btn-pesquisa i {
-            color: rgba(255, 255, 255, 0.85);
-        }
-
-        /* ===== PESQUISAS ===== */
-        .pesquisas-box {
-            background: rgba(255, 255, 255, 0.7);
+        /* ===== SEÇÃO CORPO NEGRO COM BALÕES ===== */
+        .corpo-negro-box {
+            background: rgba(255, 255, 255, 0.75);
             border-radius: 22px;
-            padding: 20px 18px 22px;
-            margin: 16px 0;
-            border-left: 5px solid #8B3A3A;
-            border: 1px solid rgba(139, 58, 58, 0.04);
-            border-left-width: 5px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+            position: relative;
+            overflow: hidden;
         }
 
-        .pesquisa-item {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 16px 18px;
-            margin-bottom: 14px;
-            border: 1px solid rgba(139, 58, 58, 0.04);
-            transition: 0.25s;
-            box-shadow: 0 2px 4px rgba(139, 58, 58, 0.02);
+        .corpo-negro-box::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(139, 58, 58, 0.02), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
         }
 
-        .pesquisa-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .pesquisa-item:hover {
-            border-color: rgba(139, 58, 58, 0.12);
-            box-shadow: 0 4px 12px rgba(139, 58, 58, 0.04);
-        }
-
-        .pesquisa-item .titulo-pesq {
-            font-weight: 700;
-            color: #2a1a1a;
-            font-size: 0.98rem;
+        .corpo-negro-header {
             display: flex;
             align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
             flex-wrap: wrap;
-            gap: 8px;
         }
 
-        .pesquisa-item .titulo-pesq i {
-            color: #8B3A3A;
-            font-size: 0.85rem;
-        }
-
-        .pesquisa-item .desc-pesq {
-            font-size: 0.88rem;
-            color: #4a3a3a;
-            margin-top: 6px;
-            padding-left: 24px;
-        }
-
-        .pesquisa-item .status {
-            display: inline-flex;
+        .corpo-negro-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2a1a1a;
+            display: flex;
             align-items: center;
-            gap: 4px;
-            font-size: 0.6rem;
-            font-weight: 700;
+            gap: 10px;
+        }
+
+        .corpo-negro-header h3 i {
+            color: #8B3A3A;
+            font-size: 1.4rem;
+        }
+
+        .corpo-negro-header .tag-cn {
+            background: rgba(139, 58, 58, 0.06);
             padding: 2px 14px;
             border-radius: 30px;
-            background: rgba(139, 58, 58, 0.04);
+            font-size: 0.7rem;
+            font-weight: 700;
             color: #8B3A3A;
-            text-transform: uppercase;
             letter-spacing: 0.3px;
         }
 
-        .pesquisa-item .status.em-andamento {
-            background: rgba(200, 120, 50, 0.08);
-            color: #b87a2a;
+        .corpo-negro-intro {
+            font-size: 0.95rem;
+            color: #4a3a3a;
+            margin-bottom: 20px;
+            padding: 12px 16px;
+            background: rgba(139, 58, 58, 0.03);
+            border-radius: 12px;
+            border-left: 3px solid #8B3A3A;
         }
 
-        .pesquisa-item .status.concluido {
-            background: rgba(30, 180, 80, 0.06);
-            color: #1a7a4a;
+        /* ===== BALÕES DOS CIENTISTAS ===== */
+        .baloes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 8px;
         }
 
-        .pesquisa-item .status.planejado {
-            background: rgba(139, 58, 58, 0.04);
-            color: #8B3A3A;
+        .balao {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 18px;
+            padding: 18px 20px 20px;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            transition: 0.3s;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
         }
 
-        .pesquisa-item .meta-info {
-            font-size: 0.75rem;
-            color: #6a5a5a;
-            margin-top: 6px;
-            padding-left: 24px;
+        .balao:hover {
+            border-color: rgba(139, 58, 58, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 58, 58, 0.06);
+        }
+
+        .balao .seta {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 14px solid rgba(255, 255, 255, 0.85);
+            top: -12px;
+            left: 30px;
+            filter: drop-shadow(0 -2px 2px rgba(139, 58, 58, 0.04));
+        }
+
+        .balao .balao-header {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 14px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
 
-        .pesquisa-item .meta-info i {
-            margin-right: 4px;
+        .balao .balao-header .icone-cientista {
+            font-size: 2rem;
             color: #8B3A3A;
+            width: 3rem;
+            text-align: center;
         }
 
-        /* ===== ARTIGOS / CONTEÚDO ===== */
-        .artigo-box {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 22px;
-            padding: 20px 18px 22px;
-            margin: 0;
-            border: 1px solid rgba(139, 58, 58, 0.04);
-            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.02);
-            transition: 0.25s;
-        }
-
-        .artigo-box:hover {
-            border-color: rgba(139, 58, 58, 0.10);
-        }
-
-        .artigo-box h4 {
+        .balao .balao-header .nome-cientista {
             font-size: 1.05rem;
             font-weight: 700;
             color: #2a1a1a;
-            margin-bottom: 8px;
+        }
+
+        .balao .balao-header .ano {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #8B3A3A;
+            background: rgba(139, 58, 58, 0.06);
+            padding: 1px 12px;
+            border-radius: 30px;
+        }
+
+        .balao .balao-header .pais {
+            font-size: 0.7rem;
+            color: #6a5a5a;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
         }
 
-        .artigo-box h4 i {
+        .balao .contribuicao {
+            font-size: 0.92rem;
+            color: #4a3a3a;
+            margin-top: 4px;
+            padding-left: 0.5rem;
+        }
+
+        .balao .contribuicao strong {
             color: #8B3A3A;
         }
 
-        .artigo-box p {
-            font-size: 0.9rem;
-            color: #4a3a3a;
-            margin-bottom: 10px;
-        }
-
-        .artigo-box ul {
-            list-style: none;
-            margin: 0;
-        }
-
-        .artigo-box li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            font-size: 0.88rem;
-            color: #4a3a3a;
-        }
-
-        .artigo-box li i {
+        .balao .contribuicao .destaque-vermelho {
             color: #8B3A3A;
-            width: 1.2rem;
-            font-size: 0.8rem;
-            margin-top: 3px;
-            flex-shrink: 0;
+            font-weight: 600;
         }
 
-        /* ===== LABORATÓRIO ===== */
-        .lab-grid {
+        .balao .frase {
+            font-style: italic;
+            color: #6a4a4a;
+            font-size: 0.85rem;
+            margin-top: 6px;
+            padding: 8px 14px;
+            background: rgba(139, 58, 58, 0.03);
+            border-radius: 10px;
+            border-left: 3px solid #8B3A3A;
+        }
+
+        .balao .frase i {
+            color: #8B3A3A;
+            margin-right: 6px;
+        }
+
+        .balao.planck { border-left: 4px solid #8B3A3A; }
+        .balao.wien { border-left: 4px solid #a84a4a; }
+        .balao.rayleigh { border-left: 4px solid #7a4a4a; }
+        .balao.einstein { border-left: 4px solid #6B2A2A; }
+        .balao.boltzmann { border-left: 4px solid #9a4a4a; }
+
+        /* ===== EFEITO FOTOELÉTRICO ===== */
+        .fotoeletrico-box {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+        }
+
+        .fotoeletrico-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 16px;
-            margin: 16px 0;
+            margin-top: 12px;
         }
 
-        .lab-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 22px;
-            padding: 20px 18px 22px;
+        .fotoeletrico-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 16px 18px;
             border: 1px solid rgba(139, 58, 58, 0.04);
-            backdrop-filter: blur(2px);
-            transition: 0.3s;
-            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.02);
+            transition: 0.25s;
         }
 
-        .lab-card:hover {
-            border-color: rgba(139, 58, 58, 0.12);
-            transform: translateY(-2px);
+        .fotoeletrico-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
         }
 
-        .lab-card h3 {
-            font-size: 1.1rem;
+        .fotoeletrico-item h4 {
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 12px;
             color: #2a1a1a;
             display: flex;
             align-items: center;
             gap: 10px;
+            margin-bottom: 6px;
         }
 
-        .lab-card h3 i {
+        .fotoeletrico-item h4 i {
             color: #8B3A3A;
+            font-size: 0.95rem;
+            width: 1.5rem;
+        }
+
+        .fotoeletrico-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            padding-left: 2.5rem;
+        }
+
+        .fotoeletrico-item ul {
+            list-style: none;
+            margin: 6px 0 0 2.5rem;
+        }
+
+        .fotoeletrico-item ul li {
+            font-size: 0.85rem;
+            color: #5a4a4a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .fotoeletrico-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+
+        .formula-box {
+            background: rgba(139, 58, 58, 0.04);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-top: 12px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2a1a1a;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+        }
+
+        .formula-box span {
+            color: #8B3A3A;
+            font-size: 1.2rem;
+        }
+
+        /* ===== APLICAÇÕES DA MECÂNICA QUÂNTICA ===== */
+        .aplicacoes-box {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+        }
+
+        .aplicacoes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .aplicacao-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            transition: 0.25s;
+        }
+
+        .aplicacao-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
+        }
+
+        .aplicacao-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .aplicacao-item h4 i {
+            color: #8B3A3A;
+            font-size: 0.95rem;
+            width: 1.5rem;
+        }
+
+        .aplicacao-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            padding-left: 2.5rem;
+        }
+
+        .aplicacao-item ul {
+            list-style: none;
+            margin: 6px 0 0 2.5rem;
+        }
+
+        .aplicacao-item ul li {
+            font-size: 0.85rem;
+            color: #5a4a4a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .aplicacao-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+
+        /* ===== O QUE NÃO É MECÂNICA QUÂNTICA ===== */
+        .nao-quantica-box {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+            border-left: 5px solid #8B3A3A;
+        }
+
+        .nao-quantica-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .nao-quantica-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            transition: 0.25s;
+        }
+
+        .nao-quantica-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
+        }
+
+        .nao-quantica-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .nao-quantica-item h4 i {
+            color: #8B3A3A;
+            font-size: 0.95rem;
+            width: 1.5rem;
+        }
+
+        .nao-quantica-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            padding-left: 2.5rem;
+        }
+
+        .nao-quantica-item ul {
+            list-style: none;
+            margin: 6px 0 0 2.5rem;
+        }
+
+        .nao-quantica-item ul li {
+            font-size: 0.85rem;
+            color: #5a4a4a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .nao-quantica-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+
+        /* ===== COMPARAÇÃO ===== */
+        .comparacao-box {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+        }
+
+        .comparacao-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .comparacao-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 18px 18px 20px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            transition: 0.25s;
+        }
+
+        .comparacao-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
+        }
+
+        .comparacao-item.classica {
+            border-left: 4px solid #8B3A3A;
+        }
+
+        .comparacao-item.quantica {
+            border-left: 4px solid #6B2A2A;
+        }
+
+        .comparacao-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .comparacao-item h3 i {
             font-size: 1.2rem;
             width: 1.8rem;
         }
 
-        .lab-card p {
-            font-size: 0.9rem;
-            color: #4a3a3a;
-            margin-bottom: 12px;
+        .comparacao-item.classica h3 i {
+            color: #8B3A3A;
         }
 
-        .lab-card ul {
+        .comparacao-item.quantica h3 i {
+            color: #6B2A2A;
+        }
+
+        .comparacao-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            margin-bottom: 8px;
+        }
+
+        .comparacao-item ul {
             list-style: none;
             margin: 0;
         }
 
-        .lab-card li {
-            margin-bottom: 10px;
+        .comparacao-item ul li {
+            font-size: 0.85rem;
+            color: #4a3a3a;
+            margin-bottom: 6px;
             display: flex;
             align-items: flex-start;
-            gap: 10px;
-            font-size: 0.9rem;
-            color: #4a3a3a;
-        }
-
-        .lab-card li i {
-            color: #8B3A3A;
-            width: 1.2rem;
-            font-size: 0.85rem;
-            margin-top: 3px;
-            flex-shrink: 0;
-        }
-
-        .btn-lab {
-            display: inline-flex;
-            align-items: center;
             gap: 8px;
-            background: linear-gradient(135deg, #8B3A3A, #6B2A2A);
-            color: white;
-            font-weight: 600;
-            padding: 12px 22px;
-            border-radius: 60px;
-            text-decoration: none;
+        }
+
+        .comparacao-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+            width: 1rem;
+        }
+
+        .comparacao-item .icone-grande {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #8B3A3A;
+            margin: 8px 0;
+        }
+
+        /* ===== SEÇÃO FÍSICA CLÁSSICA ===== */
+        .classica-box {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .classica-box::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 58, 58, 0.02), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .classica-box .classica-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .classica-box .classica-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .classica-box .classica-header h3 i {
+            color: #8B3A3A;
+            font-size: 1.4rem;
+        }
+
+        .classica-box .classica-header .classica-tag {
+            background: rgba(139, 58, 58, 0.06);
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #8B3A3A;
+            letter-spacing: 0.3px;
+        }
+
+        .classica-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
             margin-top: 12px;
-            font-size: 0.85rem;
-            border: none;
-            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.12);
-            width: 100%;
-            justify-content: center;
+        }
+
+        .classica-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
             transition: 0.25s;
         }
 
-        .btn-lab:hover {
-            background: linear-gradient(135deg, #9B4A4A, #7B3A3A);
-            transform: scale(1.02);
+        .classica-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
         }
 
-        .btn-lab:active {
-            transform: scale(0.97);
+        .classica-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .classica-item h4 i {
+            color: #8B3A3A;
+            font-size: 0.95rem;
+            width: 1.5rem;
+        }
+
+        .classica-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            padding-left: 2.5rem;
+        }
+
+        .classica-item ul {
+            list-style: none;
+            margin: 6px 0 0 2.5rem;
+        }
+
+        .classica-item ul li {
+            font-size: 0.85rem;
+            color: #5a4a4a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .classica-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+
+        /* ===== SEÇÃO FÍSICA QUÂNTICA ===== */
+        .quantica-box {
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 22px;
+            padding: 24px 22px 26px;
+            margin: 16px 0 24px;
+            border: 2px solid rgba(139, 58, 58, 0.08);
+            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quantica-box::before {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(139, 58, 58, 0.02), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .quantica-box .quantica-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .quantica-box .quantica-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .quantica-box .quantica-header h3 i {
+            color: #8B3A3A;
+            font-size: 1.4rem;
+        }
+
+        .quantica-box .quantica-header .quantica-tag {
+            background: rgba(139, 58, 58, 0.06);
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #8B3A3A;
+            letter-spacing: 0.3px;
+        }
+
+        .quantica-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .quantica-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 16px 18px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            transition: 0.25s;
+        }
+
+        .quantica-item:hover {
+            border-color: rgba(139, 58, 58, 0.10);
+            box-shadow: 0 2px 8px rgba(139, 58, 58, 0.03);
+        }
+
+        .quantica-item h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2a1a1a;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .quantica-item h4 i {
+            color: #8B3A3A;
+            font-size: 0.95rem;
+            width: 1.5rem;
+        }
+
+        .quantica-item p {
+            font-size: 0.9rem;
+            color: #4a3a3a;
+            padding-left: 2.5rem;
+        }
+
+        .quantica-item ul {
+            list-style: none;
+            margin: 6px 0 0 2.5rem;
+        }
+
+        .quantica-item ul li {
+            font-size: 0.85rem;
+            color: #5a4a4a;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .quantica-item ul li i {
+            color: #8B3A3A;
+            font-size: 0.7rem;
+            margin-top: 4px;
+        }
+
+        /* ===== TRANSIÇÃO ===== */
+        .transicao-box {
+            background: linear-gradient(135deg, rgba(139, 58, 58, 0.04), rgba(139, 58, 58, 0.01));
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin: 16px 0 20px;
+            border-left: 4px solid #8B3A3A;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            border-left-width: 4px;
+        }
+
+        .transicao-box p {
+            font-size: 0.92rem;
+            color: #4a3a3a;
+            font-weight: 500;
+        }
+
+        .transicao-box p i {
+            color: #8B3A3A;
+            margin-right: 6px;
+        }
+
+        .transicao-box .destaque {
+            color: #8B3A3A;
+            font-weight: 700;
         }
 
         /* ===== EQUIPE ===== */
@@ -699,38 +1197,18 @@
             color: #6a4a4a;
         }
 
-        .recursos-footer .contato {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 6px 16px;
-        }
-
-        .recursos-footer .contato i {
-            margin-right: 4px;
-            color: #8B3A3A;
-        }
-
-        .recursos-footer a {
-            color: #8B3A3A;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .recursos-footer a:hover {
-            text-decoration: underline;
-        }
-
         .recursos-footer .creditos {
             opacity: 0.5;
             font-size: 0.7rem;
             color: #6a5a5a;
+            text-align: center;
         }
 
         .footer-links {
             display: flex;
             flex-wrap: wrap;
             gap: 12px 20px;
+            justify-content: center;
         }
 
         .footer-links a {
@@ -741,32 +1219,11 @@
 
         .footer-links a:hover {
             color: #8B3A3A;
+            text-decoration: underline;
         }
 
-        /* ===== INFOS EXTRAS ===== */
-        .extra-infos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px 16px;
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(139, 58, 58, 0.04);
-            font-size: 0.7rem;
-            color: #6a5a5a;
-            justify-content: center;
-        }
-
-        .extra-infos span {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .extra-infos i {
-            color: #8B3A3A;
-        }
-
-        .aviso-quantico {
+        /* ===== AVISO FINAL ===== */
+        .aviso-final {
             text-align: center;
             margin-top: 18px;
             font-weight: 500;
@@ -784,7 +1241,7 @@
             flex-wrap: wrap;
         }
 
-        .aviso-quantico i {
+        .aviso-final i {
             color: #8B3A3A;
         }
 
@@ -809,24 +1266,43 @@
                 font-size: 1.8rem;
             }
 
-            .grid-2col {
+            .baloes-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
             }
 
-            .grid-3col {
-                grid-template-columns: 1fr 1fr 1fr;
+            .fotoeletrico-grid {
+                grid-template-columns: 1fr 1fr;
                 gap: 16px;
             }
 
-            .lab-grid {
+            .aplicacoes-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 20px;
+                gap: 16px;
             }
 
-            .btn-pesquisa, .btn-lab {
-                width: auto;
-                padding: 10px 28px;
+            .nao-quantica-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .classica-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .quantica-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .equipe-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .comparacao-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
             }
 
             .recursos-footer {
@@ -836,12 +1312,8 @@
                 flex-wrap: wrap;
             }
 
-            .extra-infos {
-                justify-content: space-between;
-            }
-
-            .equipe-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .footer-links {
+                justify-content: flex-start;
             }
         }
 
@@ -863,29 +1335,47 @@
                 font-size: 1.8rem;
             }
 
-            .grid-2col {
-                gap: 28px;
+            .section-title {
+                font-size: 1.4rem;
             }
 
-            .lab-grid {
-                gap: 28px;
+            .baloes-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 24px;
             }
 
-            .pesquisas-box {
-                padding: 24px 26px 28px;
+            .fotoeletrico-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+
+            .aplicacoes-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+
+            .nao-quantica-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+
+            .classica-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
+            }
+
+            .quantica-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 20px;
             }
 
             .equipe-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
-
-            .section-title {
-                font-size: 1.4rem;
-            }
         }
 
         /* ===== TOQUE ===== */
-        a, .btn-pesquisa, .btn-lab, .pesquisa-item, .info-card, .lab-card, .membro-card, .artigo-box {
+        a, .balao, .classica-item, .quantica-item, .comparacao-item, .membro-card, .fotoeletrico-item, .aplicacao-item, .nao-quantica-item {
             touch-action: manipulation;
             -webkit-tap-highlight-color: rgba(139, 58, 58, 0.02);
         }
@@ -908,304 +1398,534 @@
     <!-- ===== CABEÇALHO ===== -->
     <header class="top-bar">
         <div class="logo">
-            <h1><i class="fas fa-atom"></i> Quântica<span>Lab</span></h1>
+            <h1><i class="fas fa-atom"></i> Física <span>Comparada</span></h1>
             <div class="sub"><i class="fas fa-flask"></i> Moema Távora · Instituto Escolar</div>
         </div>
         <div class="school-badge">
-            <i class="fas fa-graduation-cap"></i> Pesquisa & Inovação
+            <i class="fas fa-graduation-cap"></i> Clássica × Quântica
         </div>
     </header>
 
     <!-- ===== NAVEGAÇÃO ===== -->
     <nav class="nav-links" aria-label="Navegação principal">
         <a href="#inicio"><i class="fas fa-house-chimney"></i> Início</a>
-        <a href="#conceitos"><i class="fas fa-brain"></i> Conceitos</a>
-        <a href="#pesquisas"><i class="fas fa-microscope"></i> Pesquisas</a>
-        <a href="#artigos"><i class="fas fa-newspaper"></i> Artigos</a>
-        <a href="#laboratorio"><i class="fas fa-flask"></i> Lab</a>
+        <a href="#corpo-negro"><i class="fas fa-fire"></i> Corpo Negro</a>
+        <a href="#fotoeletrico"><i class="fas fa-bolt"></i> Efeito Fotoelétrico</a>
+        <a href="#aplicacoes"><i class="fas fa-microchip"></i> Aplicações</a>
+        <a href="#nao-quantica"><i class="fas fa-ban"></i> O que NÃO é</a>
+        <a href="#comparacao"><i class="fas fa-arrows-left-right"></i> Comparação</a>
+        <a href="#classica"><i class="fas fa-history"></i> Clássica</a>
+        <a href="#quantica"><i class="fas fa-atom"></i> Quântica</a>
         <a href="#equipe"><i class="fas fa-users"></i> Equipe</a>
-        <a href="#recursos"><i class="fas fa-circle-info"></i> Recursos</a>
     </nav>
 
     <!-- ===== HERO ===== -->
     <section id="inicio" class="hero-card">
-        <h2><i class="fas fa-superpowers"></i> Onde a realidade se desfaz</h2>
+        <h2><i class="fas fa-superpowers"></i> Da Certeza à Probabilidade</h2>
         <p>
-            <span class="highlight">⚛️ Física Quântica</span> — o estudo dos menores componentes do universo. 
-            Na <strong>Escola Moema Távora</strong> e no <strong>Instituto Escolar</strong>, 
-            exploramos partículas, ondas e probabilidades para entender o mundo além do que os olhos veem.
+            <span class="highlight">⚛️ Física Clássica × Física Quântica</span> — duas visões de mundo que mudaram 
+            a forma como entendemos o universo. Enquanto a <strong>Física Clássica</strong> descreve um mundo 
+            <strong>determinístico</strong> e <strong>previsível</strong>, a <strong>Física Quântica</strong> 
+            revela um universo de <strong>probabilidades</strong>, <strong>incertezas</strong> e 
+            <strong>conexões misteriosas</strong>.
         </p>
         <p style="margin-top: 6px; font-size: 0.9rem; color: #6a4a4a;">
-            <i class="fas fa-arrow-right" style="color: #8B3A3A;"></i> Participe das nossas pesquisas e descubra o universo quântico!
+            <i class="fas fa-arrow-right" style="color: #8B3A3A;"></i> Nossas pesquisas começaram em <strong>agosto de 2026</strong> e estão em andamento!
         </p>
-        
+       
     </section>
 
-    <!-- ===== CONCEITOS FUNDAMENTAIS ===== -->
-    <h2 class="section-title" id="conceitos">
-        <i class="fas fa-brain"></i> Conceitos Fundamentais
-        <span class="badge">Teoria Quântica</span>
+    <!-- ===== CORPO NEGRO - PROBLEMÁTICA E CIENTISTAS ===== -->
+    <h2 class="section-title" id="corpo-negro">
+        <i class="fas fa-fire"></i> A Problemática do Corpo Negro
+        <span class="badge">A Crise da Física Clássica</span>
     </h2>
 
-    <div class="grid-3col">
-        <article class="info-card">
-            <h3><i class="fas fa-wave-square"></i> Dualidade</h3>
-            <p>Partículas podem se comportar como ondas e vice-versa, dependendo de como são observadas.</p>
-            <ul>
-                <li><i class="fas fa-circle"></i> Partícula <span class="tag">corpúsculo</span></li>
-                <li><i class="fas fa-wave-sine"></i> Onda <span class="tag">frequência</span></li>
-                <li><i class="fas fa-arrow-right-arrow-left"></i> Complementaridade</li>
-                <li><i class="fas fa-lightbulb"></i> Experimento da fenda dupla</li>
-            </ul>
-            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Explorar dualidade</a>
-        </article>
-
-        <article class="info-card">
-            <h3><i class="fas fa-dice"></i> Incerteza</h3>
-            <p>Quanto mais sabemos sobre a posição de uma partícula, menos sabemos sobre seu momento.</p>
-            <ul>
-                <li><i class="fas fa-ruler-combined"></i> Posição × Momento</li>
-                <li><i class="fas fa-clock"></i> Energia × Tempo</li>
-                <li><i class="fas fa-chart-line"></i> Princípio de Heisenberg</li>
-                <li><i class="fas fa-eye"></i> Observador influencia</li>
-            </ul>
-            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Entender incerteza</a>
-        </article>
-
-        <article class="info-card">
-            <h3><i class="fas fa-link"></i> Emaranhamento</h3>
-            <p>Partículas emaranhadas permanecem conectadas instantaneamente, independentemente da distância.</p>
-            <ul>
-                <li><i class="fas fa-arrows-spin"></i> Correlação quântica</li>
-                <li><i class="fas fa-bolt"></i> Ação à distância</li>
-                <li><i class="fas fa-cubes"></i> Estados emaranhados</li>
-                <li><i class="fas fa-quote-right"></i> "Spooky action at a distance"</li>
-            </ul>
-            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Ver emaranhamento</a>
-        </article>
-    </div>
-
-    <!-- ===== SUPERPOSIÇÃO E TÚNEL ===== -->
-    <div class="grid-2col">
-        <article class="info-card">
-            <h3><i class="fas fa-layer-group"></i> Superposição</h3>
-            <p>Uma partícula pode existir em múltiplos estados ao mesmo tempo até ser medida.</p>
-            <ul>
-                <li><i class="fas fa-code-branch"></i> Múltiplos estados simultâneos</li>
-                <li><i class="fas fa-chart-pie"></i> Probabilidade de colapso</li>
-                <li><i class="fas fa-computer"></i> Qubits em computação quântica</li>
-                <li><i class="fas fa-gauge-high"></i> Interferência quântica</li>
-            </ul>
-            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Explorar superposição</a>
-        </article>
-
-        <article class="info-card">
-            <h3><i class="fas fa-arrow-right-through"></i> Efeito Túnel</h3>
-            <p>Partículas podem atravessar barreiras que, pela física clássica, seriam intransponíveis.</p>
-            <ul>
-                <li><i class="fas fa-shield"></i> Barreira de potencial</li>
-                <li><i class="fas fa-wave-sine"></i> Função de onda</li>
-                <li><i class="fas fa-microchip"></i> Aplicações em diodos</li>
-                <li><i class="fas fa-radio"></i> Microscópio de tunelamento</li>
-            </ul>
-            <a href="#" class="btn-pesquisa"><i class="fas fa-chevron-circle-right"></i> Ver efeito túnel</a>
-        </article>
-    </div>
-
-    <!-- ===== PESQUISAS ===== -->
-    <h2 class="section-title" id="pesquisas">
-        <i class="fas fa-microscope"></i> Pesquisas em Andamento
-        <span class="badge">Projetos Ativos</span>
-    </h2>
-
-    <section class="pesquisas-box">
-        <div class="pesquisa-item">
-            <div class="titulo-pesq">
-                <i class="fas fa-quote-right"></i> Emaranhamento quântico em laboratório
-                <span class="status em-andamento"><i class="fas fa-spinner fa-pulse"></i> Em andamento</span>
-            </div>
-            <div class="desc-pesq">
-                Investigando como partículas podem se conectar instantaneamente através do emaranhamento quântico. O projeto utiliza detectores de fótons e analisadores de polarização para medir correlações quânticas em tempo real.
-            </div>
-            <div class="meta-info">
-                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo, Victoria Régia, Lorena Teixeira, Pedro Lucas · 2 orientadores</span>
-                <span><i class="fas fa-calendar"></i> Início: Mar/2026 · Previsão: Dez/2026</span>
-                <span><i class="fas fa-flask"></i> Lab de Óptica Quântica</span>
-            </div>
+    <section class="corpo-negro-box">
+        <div class="corpo-negro-header">
+            <h3><i class="fas fa-circle-exclamation"></i> O que é o Corpo Negro?</h3>
+            <span class="tag-cn">Séc. XIX</span>
         </div>
 
-        <div class="pesquisa-item">
-            <div class="titulo-pesq">
-                <i class="fas fa-quote-right"></i> Computação quântica com qubits supercondutores
-                <span class="status em-andamento"><i class="fas fa-spinner fa-pulse"></i> Em andamento</span>
-            </div>
-            <div class="desc-pesq">
-                Simulação de algoritmos quânticos utilizando qubits supercondutores. O projeto inclui programação de portas lógicas quânticas e implementação do algoritmo de Deutsch-Jozsa.
-            </div>
-            <div class="meta-info">
-                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo · 1 orientador</span>
-                <span><i class="fas fa-calendar"></i> Início: Fev/2026 · Previsão: Nov/2026</span>
-                <span><i class="fas fa-desktop"></i> Lab de Computação</span>
-            </div>
+        <div class="corpo-negro-intro">
+            <p><i class="fas fa-quote-left" style="color: #8B3A3A; margin-right: 6px;"></i> 
+            Um <strong>corpo negro</strong> é um objeto ideal que absorve <strong>toda</strong> a radiação eletromagnética que incide sobre ele, sem refletir nada. 
+            Quando aquecido, ele emite radiação térmica em um espectro que depende apenas da sua <strong>temperatura</strong>. 
+            O problema era que a <strong>Física Clássica</strong> não conseguia explicar a distribuição de energia dessa radiação — 
+            a chamada <strong>"catástrofe do ultravioleta"</strong>. Foi essa crise que deu origem à <strong>Física Quântica</strong>.
+            </p>
         </div>
 
-        <div class="pesquisa-item">
-            <div class="titulo-pesq">
-                <i class="fas fa-quote-right"></i> Efeito túnel quântico em nanomateriais
-                <span class="status concluido"><i class="fas fa-check-circle"></i> Concluído</span>
+        <!-- ===== BALÕES DOS CIENTISTAS ===== -->
+        <div class="baloes-grid">
+
+            <div class="balao planck">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Gustav Kirchhoff</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1859</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Alemanha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Kirchhoff foi o primeiro a definir formalmente o conceito de <span class="destaque-vermelho">corpo negro</span> (ou <em>radiador ideal</em>). Ele demonstrou que a <strong>radiação emitida</strong> por um corpo negro depende <strong>apenas da temperatura</strong>, não da sua composição ou forma.
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "A razão entre a emissividade e a absortividade de um corpo é uma função universal da temperatura e da frequência."
+                </div>
             </div>
-            <div class="desc-pesq">
-                Estudo do tunelamento quântico em diodos de tunelamento ressonante e sua aplicação em dispositivos eletrônicos de alta frequência. Pesquisa apresentada na Feira de Ciências 2025.
+
+            <div class="balao wien">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Wilhelm Wien</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1893</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Alemanha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Wien desenvolveu a <span class="destaque-vermelho">Lei do Deslocamento de Wien</span>, que relaciona a temperatura de um corpo negro com o comprimento de onda em que a emissão é máxima. Sua fórmula funcionava bem para <strong>altas frequências</strong>, mas falhava para baixas.
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "O comprimento de onda de pico da radiação é inversamente proporcional à temperatura do corpo."
+                </div>
             </div>
-            <div class="meta-info">
-                <span><i class="fas fa-users"></i> Equipe: Victoria Régia, Lorena Teixeira, Pedro Lucas · 1 orientador</span>
-                <span><i class="fas fa-calendar"></i> Concluído: Nov/2025</span>
-                <span><i class="fas fa-trophy"></i> 2º lugar na Feira de Ciências</span>
+
+            <div class="balao rayleigh">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Lord Rayleigh</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1900</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Inglaterra</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Rayleigh (em colaboração com Jeans) propôs a <span class="destaque-vermelho">Lei de Rayleigh-Jeans</span>, que descrevia a radiação do corpo negro usando a <strong>física clássica</strong>. O problema? Sua fórmula funcionava bem para <strong>baixas frequências</strong>, mas previa uma <strong>emissão infinita</strong> para altas frequências — a famosa <strong>"catástrofe do ultravioleta"</strong>.
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "A física clássica prevê que um corpo negro irradia energia infinita em altas frequências — um absurdo!"
+                </div>
             </div>
+
+            <div class="balao planck">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Max Planck</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1900</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Alemanha</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Planck <strong>revolucionou</strong> a física ao propor que a energia é emitida em <span class="destaque-vermelho">"pacotes"</span> ou <span class="destaque-vermelho">"quanta"</span> discretos, e não de forma contínua como acreditava a física clássica. Ele introduziu a <strong>constante de Planck (h)</strong> e sua fórmula <span class="destaque-vermelho">resolvia perfeitamente</span> o problema do corpo negro — para <strong>todas</strong> as frequências!
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "A energia é emitida em quanta discretos: E = h · f. Nasceu a Física Quântica!"
+                </div>
+            </div>
+
+            <div class="balao einstein">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Albert Einstein</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1905</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Alemanha/Suíça</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Einstein usou a ideia de Planck para explicar o <span class="destaque-vermelho">efeito fotoelétrico</span>, mostrando que a luz também é composta por "pacotes" de energia — os <strong>fótons</strong>. Ele provou que a <strong>energia da luz</strong> depende da sua frequência, não da sua intensidade, confirmando a <strong>natureza quântica</strong> da radiação.
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "A luz se comporta como partículas — os fótons — cuja energia é E = h · f."
+                </div>
+            </div>
+
+            <div class="balao boltzmann">
+                <div class="seta"></div>
+                <div class="balao-header">
+                    <div class="icone-cientista"><i class="fas fa-user-astronaut"></i></div>
+                    <div>
+                        <div class="nome-cientista">Ludwig Boltzmann</div>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 2px;">
+                            <span class="ano">1870-1880</span>
+                            <span class="pais"><i class="fas fa-flag"></i> Áustria</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contribuicao">
+                    <strong>🔬 Contribuição:</strong> Boltzmann desenvolveu a <span class="destaque-vermelho">termodinâmica estatística</span>, relacionando a <strong>entropia</strong> de um sistema com o número de estados microscópicos possíveis (S = k · log W). Sua constante <strong>k</strong> aparece na fórmula de Planck e é fundamental para a <strong>mecânica estatística</strong> que pavimentou o caminho para a física quântica.
+                </div>
+                <div class="frase">
+                    <i class="fas fa-quote-left"></i> "A entropia é uma medida da desordem microscópica. A física quântica nasce da estatística."
+                </div>
+            </div>
+
         </div>
 
-        <div class="pesquisa-item">
-            <div class="titulo-pesq">
-                <i class="fas fa-quote-right"></i> Superposição quântica e interferência de fótons
-                <span class="status planejado"><i class="fas fa-clock"></i> Planejado</span>
-            </div>
-            <div class="desc-pesq">
-                Estudo teórico-experimental sobre superposição de estados quânticos e padrões de interferência em experimentos de fenda dupla com fótons únicos.
-            </div>
-            <div class="meta-info">
-                <span><i class="fas fa-users"></i> Equipe: Marina Alves, Eshila Lima, Davi Ferreira, Emily Diogo · 2 orientadores</span>
-                <span><i class="fas fa-calendar"></i> Previsto: Ago/2026 · Duração: 6 meses</span>
-                <span><i class="fas fa-flask"></i> Lab de Óptica</span>
-            </div>
-        </div>
-
-        <div class="pesquisa-item">
-            <div class="titulo-pesq">
-                <i class="fas fa-quote-right"></i> Criptografia quântica e distribuição de chaves
-                <span class="status planejado"><i class="fas fa-clock"></i> Planejado</span>
-            </div>
-            <div class="desc-pesq">
-                Desenvolvimento de um protótipo de distribuição quântica de chaves (QKD) utilizando polarização de fótons para comunicação segura.
-            </div>
-            <div class="meta-info">
-                <span><i class="fas fa-users"></i> Equipe: Victoria Régia, Lorena Teixeira, Pedro Lucas · 1 orientador</span>
-                <span><i class="fas fa-calendar"></i> Previsto: Set/2026 · Duração: 8 meses</span>
-                <span><i class="fas fa-lock"></i> Parceria com Instituto Escolar</span>
-            </div>
-        </div>
-
-        <div style="margin-top: 18px; text-align: center;">
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A); max-width: 400px; margin: 0 auto;">
-                <i class="fas fa-flask"></i> Ver todas as pesquisas (12 projetos)
-            </a>
+        <div class="transicao-box" style="margin-top: 20px;">
+            <p><i class="fas fa-arrow-right"></i> <span class="destaque">Conclusão:</span> A problemática do corpo negro foi o <strong>gatilho</strong> para a revolução quântica. O que começou com Kirchhoff e Wien, passou pela <strong>"catástrofe do ultravioleta"</strong> de Rayleigh-Jeans, e culminou com a <strong>ousadia de Planck</strong> — que introduziu o <strong>quanta de energia</strong> — e a <strong>confirmação de Einstein</strong> com o efeito fotoelétrico. A física nunca mais seria a mesma.</p>
         </div>
     </section>
 
-    <!-- ===== ARTIGOS E CONTEÚDO ===== -->
-    <h2 class="section-title" id="artigos">
-        <i class="fas fa-newspaper"></i> Artigos e Conteúdo
-        <span class="badge">Publicações</span>
+    <!-- ===== EFEITO FOTOELÉTRICO ===== -->
+    <h2 class="section-title" id="fotoeletrico">
+        <i class="fas fa-bolt"></i> Efeito Fotoelétrico
+        <span class="badge">Einstein · 1905</span>
     </h2>
 
-    <div class="grid-2col">
-        <div class="artigo-box">
-            <h4><i class="fas fa-pen-fancy"></i> O que é Física Quântica?</h4>
-            <p>Uma introdução aos princípios fundamentais da mecânica quântica, desde a quantização da energia até a função de onda e a equação de Schrödinger.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Quantização de energia (Planck)</li>
-                <li><i class="fas fa-check-circle"></i> Função de onda e probabilidade</li>
-                <li><i class="fas fa-check-circle"></i> Equação de Schrödinger</li>
-                <li><i class="fas fa-check-circle"></i> Interpretação de Copenhagen</li>
-            </ul>
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+    <section class="fotoeletrico-box">
+        <div class="corpo-negro-header">
+            <h3><i class="fas fa-lightbulb"></i> O que é o Efeito Fotoelétrico?</h3>
+            <span class="tag-cn">Natureza Quântica da Luz</span>
         </div>
 
-        <div class="artigo-box">
-            <h4><i class="fas fa-history"></i> História da Mecânica Quântica</h4>
-            <p>Uma viagem pela história da física quântica, desde os experimentos de Planck e Einstein até o desenvolvimento da teoria moderna.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Planck e o quantum de ação</li>
-                <li><i class="fas fa-check-circle"></i> Einstein e o efeito fotoelétrico</li>
-                <li><i class="fas fa-check-circle"></i> Bohr e o modelo atômico</li>
-                <li><i class="fas fa-check-circle"></i> Heisenberg, Schrödinger e Dirac</li>
-            </ul>
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
-        </div>
-    </div>
-
-    <div class="grid-3col">
-        <div class="artigo-box">
-            <h4><i class="fas fa-computer"></i> Computação Quântica</h4>
-            <p>Como os qubits revolucionam a computação, permitindo cálculos exponencialmente mais rápidos que computadores clássicos.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Qubits vs bits</li>
-                <li><i class="fas fa-check-circle"></i> Portas lógicas quânticas</li>
-                <li><i class="fas fa-check-circle"></i> Algoritmos quânticos</li>
-                <li><i class="fas fa-check-circle"></i> Aplicações práticas</li>
-            </ul>
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        <div class="corpo-negro-intro">
+            <p><i class="fas fa-quote-left" style="color: #8B3A3A; margin-right: 6px;"></i> 
+            O <strong>efeito fotoelétrico</strong> é a emissão de <strong>elétrons</strong> por um material (geralmente metálico) quando ele é iluminado por <strong>luz</strong> (ou radiação eletromagnética) de frequência suficientemente alta. Esse fenômeno foi a <strong>prova experimental definitiva</strong> da natureza quântica da luz e rendeu a <strong>Albert Einstein</strong> o Prêmio Nobel de Física em 1921.
+            </p>
         </div>
 
-        <div class="artigo-box">
-            <h4><i class="fas fa-shield-halved"></i> Criptografia Quântica</h4>
-            <p>A segurança da informação na era quântica, utilizando princípios da mecânica quântica para garantir comunicações invioláveis.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Distribuição quântica de chaves</li>
-                <li><i class="fas fa-check-circle"></i> Teletransporte quântico</li>
-                <li><i class="fas fa-check-circle"></i> Segurança incondicional</li>
-                <li><i class="fas fa-check-circle"></i> Ameaças quânticas</li>
-            </ul>
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        <div class="fotoeletrico-grid">
+            <div class="fotoeletrico-item">
+                <h4><i class="fas fa-circle-exclamation"></i> O Problema Clássico</h4>
+                <p>A física clássica (onda) previa que:</p>
+                <ul>
+                    <li><i class="fas fa-times-circle" style="color: #8B3A3A;"></i> A energia dos elétrons emitidos <strong>aumentaria com a intensidade</strong> da luz</li>
+                    <li><i class="fas fa-times-circle" style="color: #8B3A3A;"></i> Qualquer frequência de luz poderia emitir elétrons, desde que fosse intensa o suficiente</li>
+                    <li><i class="fas fa-times-circle" style="color: #8B3A3A;"></i> Não haveria um "tempo mínimo" para a emissão</li>
+                </ul>
+            </div>
+
+            <div class="fotoeletrico-item">
+                <h4><i class="fas fa-check-circle"></i> A Explicação Quântica</h4>
+                <p>Einstein propôs que a luz é composta por <strong>fótons</strong> (quanta de energia):</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> A energia de cada fóton é <strong>E = h · f</strong> (constante de Planck × frequência)</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> A emissão ocorre <strong>instantaneamente</strong>, desde que a frequência seja alta o suficiente</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Aumentar a intensidade <strong>aumenta o número</strong> de elétrons, não sua energia</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Existe uma <strong>frequência de corte</strong> mínima para que o efeito ocorra</li>
+                </ul>
+            </div>
+
+            <div class="fotoeletrico-item">
+                <h4><i class="fas fa-microscope"></i> Observações Experimentais</h4>
+                <p>Os experimentos confirmaram a teoria quântica:</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Energia cinética</strong> dos elétrons depende da <strong>frequência</strong> da luz</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Número</strong> de elétrons emitidos depende da <strong>intensidade</strong> da luz</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Existe uma <strong>frequência de limiar</strong> para cada metal</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> A emissão é <strong>quase instantânea</strong> (tempo < 10⁻⁹ s)</li>
+                </ul>
+            </div>
         </div>
 
-        <div class="artigo-box">
-            <h4><i class="fas fa-flask"></i> Experimentos Quânticos</h4>
-            <p>Os experimentos mais importantes da física quântica e como você pode reproduzir alguns deles no laboratório da escola.</p>
-            <ul>
-                <li><i class="fas fa-check-circle"></i> Fenda dupla</li>
-                <li><i class="fas fa-check-circle"></i> Efeito fotoelétrico</li>
-                <li><i class="fas fa-check-circle"></i> Experimento de Stern-Gerlach</li>
-                <li><i class="fas fa-check-circle"></i> Emaranhamento de fótons</li>
-            </ul>
-            <a href="#" class="btn-pesquisa" style="background: linear-gradient(135deg, #8B3A3A, #6B2A2A);"><i class="fas fa-book-open"></i> Ler artigo</a>
+        <div class="formula-box">
+            <span>E = h · f − φ</span>
+            <p style="font-size: 0.8rem; font-weight: 400; margin-top: 4px; color: #5a4a4a;">
+                Onde: <strong>E</strong> = energia cinética do elétron · <strong>h</strong> = constante de Planck · <strong>f</strong> = frequência da luz · <strong>φ</strong> = função trabalho (energia mínima para arrancar o elétron)
+            </p>
         </div>
-    </div>
 
-    <!-- ===== LABORATÓRIO ===== -->
-    <h2 class="section-title" id="laboratorio">
-        <i class="fas fa-flask"></i> Laboratório e Instituto
-        <span class="badge">Infraestrutura</span>
+        <div class="transicao-box" style="margin-top: 16px;">
+            <p><i class="fas fa-arrow-right"></i> <span class="destaque">Importância histórica:</span> O efeito fotoelétrico foi a <strong>primeira prova experimental</strong> da natureza quântica da luz e consolidou a teoria quântica como a <strong>nova física</strong> do século XX. Einstein recebeu o <strong>Prêmio Nobel</strong> por essa descoberta.</p>
+        </div>
+    </section>
+
+    <!-- ===== APLICAÇÕES DA MECÂNICA QUÂNTICA ===== -->
+    <h2 class="section-title" id="aplicacoes">
+        <i class="fas fa-microchip"></i> Aplicações da Mecânica Quântica
+        <span class="badge">Tecnologia Moderna</span>
     </h2>
 
-    <div class="lab-grid">
-        <div class="lab-card">
-            <h3><i class="fas fa-flask"></i> Lab Quântico</h3>
-            <p>Nosso laboratório dedicado à pesquisa quântica, equipado com instrumentos de precisão e computação de alto desempenho.</p>
-            <ul>
-                <li><i class="fas fa-microchip"></i> Simulador de qubits (20+ qubits)</li>
-                <li><i class="fas fa-laser"></i> Sistema de óptica quântica</li>
-                <li><i class="fas fa-chart-bar"></i> Analisador de probabilidades</li>
-                <li><i class="fas fa-desktop"></i> 5 estações de trabalho</li>
-                <li><i class="fas fa-camera"></i> Detectores de fótons únicos</li>
-                <li><i class="fas fa-code"></i> Software de simulação quântica</li>
-            </ul>
-            <a href="#" class="btn-lab"><i class="fas fa-chevron-circle-right"></i> Conheça o laboratório</a>
+    <section class="aplicacoes-box">
+        <div class="corpo-negro-header">
+            <h3><i class="fas fa-rocket"></i> Onde a Quântica está presente?</h3>
+            <span class="tag-cn">Dia a dia</span>
         </div>
 
-        <div class="lab-card">
-            <h3><i class="fas fa-graduation-cap"></i> Instituto Escolar</h3>
-            <p>O Instituto Escolar é parceiro da Escola Moema Távora em pesquisas quânticas e projetos de inovação educacional.</p>
-            <ul>
-                <li><i class="fas fa-seedling"></i> <strong>Instituto Escolar</strong> – pesquisa e inovação</li>
-                <li><i class="fas fa-handshake"></i> Parceria ativa com a Moema Távora</li>
-                <li><i class="fas fa-globe"></i> Projetos de inovação quântica</li>
-                <li><i class="fas fa-calendar-check"></i> Workshops mensais abertos</li>
-                <li><i class="fas fa-trophy"></i> Premiações em feiras de ciência</li>
-                <li><i class="fas fa-link"></i> Rede de pesquisa colaborativa</li>
-            </ul>
-            <a href="#" class="btn-lab"><i class="fas fa-chevron-circle-right"></i> Sobre o Instituto</a>
+        <div class="corpo-negro-intro">
+            <p><i class="fas fa-quote-left" style="color: #8B3A3A; margin-right: 6px;"></i> 
+            A <strong>mecânica quântica</strong> não é apenas uma teoria abstrata — ela está <strong>em toda parte</strong> na tecnologia moderna. Desde o seu <strong>smartphone</strong> até a <strong>medicina</strong>, a quântica é a base de inovações que transformaram o mundo.
+            </p>
+        </div>
+
+        <div class="aplicacoes-grid">
+            <div class="aplicacao-item">
+                <h4><i class="fas fa-computer"></i> Computação Quântica</h4>
+                <p>Processadores quânticos utilizam <strong>qubits</strong> (bits quânticos) que podem estar em <strong>superposição</strong> de estados, permitindo cálculos exponencialmente mais rápidos que computadores clássicos.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Criptografia quântica</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Simulação de moléculas</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Otimização de sistemas complexos</li>
+                </ul>
+            </div>
+
+            <div class="aplicacao-item">
+                <h4><i class="fas fa-medal"></i> Medicina e Saúde</h4>
+                <p>Desde equipamentos de diagnóstico até tratamentos avançados, a física quântica revolucionou a medicina moderna.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Ressonância Magnética (RM)</strong> — baseada em spin nuclear</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Tomografia por emissão de pósitrons (PET)</strong></li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Radioterapia</strong> e tratamento de câncer</li>
+                </ul>
+            </div>
+
+            <div class="aplicacao-item">
+                <h4><i class="fas fa-mobile-screen-button"></i> Eletrônica e Comunicação</h4>
+                <p>Todos os dispositivos eletrônicos modernos dependem da física quântica para funcionar.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Semicondutores</strong> e transistores</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Lasers</strong> e diodos emissores de luz (LEDs)</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>GPS</strong> e relógios atômicos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="transicao-box" style="margin-top: 16px;">
+            <p><i class="fas fa-arrow-right"></i> <span class="destaque">A quântica está em tudo!</span> Cada vez que você usa seu smartphone, faz uma ressonância magnética ou usa um GPS, você está usando <strong>tecnologia quântica</strong>.</p>
+        </div>
+    </section>
+
+    <!-- ===== O QUE NÃO É MECÂNICA QUÂNTICA ===== -->
+    <h2 class="section-title" id="nao-quantica">
+        <i class="fas fa-ban"></i> O que NÃO é Mecânica Quântica
+        <span class="badge">Esclarecendo Mitos</span>
+    </h2>
+
+    <section class="nao-quantica-box">
+        <div class="corpo-negro-header">
+            <h3><i class="fas fa-circle-exclamation"></i> Desmistificando a Quântica</h3>
+            <span class="tag-cn">Mitologia Quântica</span>
+        </div>
+
+        <div class="corpo-negro-intro">
+            <p><i class="fas fa-quote-left" style="color: #8B3A3A; margin-right: 6px;"></i> 
+            A <strong>mecânica quântica</strong> é frequentemente mal compreendida e, infelizmente, <strong>apropriada por pseudociências</strong> e charlatanismo. Muitas coisas são <strong>erroneamente</strong> atribuídas à quântica. Vamos esclarecer o que <strong>NÃO</strong> é física quântica.
+            </p>
+        </div>
+
+        <div class="nao-quantica-grid">
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-hand-sparkles"></i> "Pensamento Quântico"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> A ideia de que a "consciência" ou "pensamentos" podem mudar a realidade física no nível quântico (como em livros de autoajuda).</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> A quântica descreve o comportamento de partículas subatômicas, não a mente humana.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> O colapso da função de onda ocorre por <strong>interações físicas</strong>, não por "pensamento".</li>
+                </ul>
+            </div>
+
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-crystal-ball"></i> "Energia Quântica" e "Vibrações"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> Práticas esotéricas que falam em "energias quânticas", "vibrações quânticas" ou "cura quântica".</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> A quântica é uma teoria matemática rigorosa, comprovada por experimentos.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Não existe "energia quântica" como uma força mística — existem <strong>quanta de energia</strong> (fótons, por exemplo).</li>
+                </ul>
+            </div>
+
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-brain"></i> "Consciência Quântica"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> A ideia de que a consciência humana ou animal opera através de processos quânticos <strong>macroscópicos</strong>.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> O cérebro é um sistema clássico, <strong>não quântico</strong>.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Fenômenos quânticos são <strong>microscópicos</strong> — não ocorrem no nível de neurônios.</li>
+                </ul>
+            </div>
+
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-pills"></i> "Medicina Quântica"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> Tratamentos médicos que afirmam usar "frequências quânticas" ou "campos quânticos" para curar doenças.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> A medicina quântica <strong>não existe</strong> como prática médica reconhecida.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> O que existe são <strong>aplicações tecnológicas</strong> da quântica (RM, PET, radioterapia).</li>
+                </ul>
+            </div>
+
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-tree"></i> "Ecologia Quântica"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> A ideia de que a natureza ou ecossistemas funcionam através de processos quânticos.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> Ecossistemas são sistemas <strong>clássicos</strong>.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> Apenas <strong>processos microscópicos</strong> (como a fotossíntese) podem ter aspectos quânticos.</li>
+                </ul>
+            </div>
+
+            <div class="nao-quantica-item">
+                <h4><i class="fas fa-infinity"></i> "Realidades Paralelas Quânticas"</h4>
+                <p><span style="color: #8B3A3A; font-weight: 700;">❌ NÃO É:</span> A ideia (popularizada em filmes) de que a quântica permite viagens para "realidades paralelas" ou "universos alternativos".</p>
+                <ul>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> <strong>Na realidade:</strong> A interpretação de "muitos mundos" é uma <strong>interpretação matemática</strong> — não significa que existam universos paralelos.</li>
+                    <li><i class="fas fa-check-circle" style="color: #8B3A3A;"></i> É uma <strong>teoria matemática</strong>, não uma realidade física comprovada.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="transicao-box" style="margin-top: 16px; border-left-color: #8B3A3A;">
+            <p><i class="fas fa-arrow-right"></i> <span class="destaque">Resumo:</span> A mecânica quântica é uma <strong>teoria científica rigorosa</strong>, comprovada por experimentos e usada em <strong>tecnologia real</strong>. Ela <strong>NÃO</strong> é misticismo, autoajuda, ou uma explicação para fenômenos paranormais. <strong>Confie na ciência, não em mitos!</strong></p>
+        </div>
+    </section>
+
+    <!-- ===== COMPARAÇÃO DIRETA ===== -->
+    <h2 class="section-title" id="comparacao">
+        <i class="fas fa-arrows-left-right"></i> Comparação Direta
+        <span class="badge">Clássica × Quântica</span>
+    </h2>
+
+    <div class="comparacao-box">
+        <div class="comparacao-grid">
+            <div class="comparacao-item classica">
+                <h3><i class="fas fa-history"></i> Física Clássica</h3>
+                <div class="icone-grande"><i class="fas fa-globe-americas"></i></div>
+                <p><strong>Visão de mundo:</strong> Determinística e previsível</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Trajetórias precisas e calculáveis</li>
+                    <li><i class="fas fa-check"></i> Causa e efeito absolutos</li>
+                    <li><i class="fas fa-check"></i> Energia contínua e infinita</li>
+                    <li><i class="fas fa-check"></i> Observador passivo e externo</li>
+                    <li><i class="fas fa-check"></i> Leis universais e imutáveis</li>
+                </ul>
+            </div>
+
+            <div class="comparacao-item quantica">
+                <h3><i class="fas fa-atom"></i> Física Quântica</h3>
+                <div class="icone-grande"><i class="fas fa-atom"></i></div>
+                <p><strong>Visão de mundo:</strong> Probabilística e incerta</p>
+                <ul>
+                    <li><i class="fas fa-check"></i> Probabilidades e incertezas</li>
+                    <li><i class="fas fa-check"></i> Colapso da função de onda</li>
+                    <li><i class="fas fa-check"></i> Energia quantizada (discreta)</li>
+                    <li><i class="fas fa-check"></i> Observador influencia o sistema</li>
+                    <li><i class="fas fa-check"></i> Emaranhamento e não-localidade</li>
+                </ul>
+            </div>
         </div>
     </div>
+
+    <!-- ===== FÍSICA CLÁSSICA ===== -->
+    <h2 class="section-title" id="classica">
+        <i class="fas fa-history"></i> Física Clássica
+        <span class="badge">Séc. XVII – XIX</span>
+    </h2>
+
+    <section class="classica-box">
+        <div class="classica-header">
+            <h3><i class="fas fa-landmark"></i> O que era a Física Clássica?</h3>
+            <span class="classica-tag">Determinismo</span>
+        </div>
+        <p style="font-size: 0.95rem; color: #4a3a3a; margin-bottom: 16px;">
+            A <strong>Física Clássica</strong> dominou o pensamento científico por mais de dois séculos. 
+            Ela descrevia o mundo como <strong>determinístico</strong> e <strong>previsível</strong>, onde tudo podia ser 
+            calculado com precisão absoluta. Baseava-se nos trabalhos de <strong>Isaac Newton</strong>, 
+            <strong>James Clerk Maxwell</strong> e <strong>Galileu Galilei</strong>.
+        </p>
+
+        <div class="classica-grid">
+            <div class="classica-item">
+                <h4><i class="fas fa-arrows-up-down"></i> Mecânica Newtoniana</h4>
+                <p>Desenvolvida por Isaac Newton no século XVII, descreve o movimento dos corpos com base nas <strong>Leis de Newton</strong> e na <strong>Lei da Gravitação Universal</strong>.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Determinismo absoluto</li>
+                    <li><i class="fas fa-check-circle"></i> Trajetórias precisas</li>
+                    <li><i class="fas fa-check-circle"></i> Forças e acelerações</li>
+                </ul>
+            </div>
+
+            <div class="classica-item">
+                <h4><i class="fas fa-bolt"></i> Eletromagnetismo</h4>
+                <p>Unificado por James Clerk Maxwell no século XIX, descreve a interação entre cargas elétricas e campos magnéticos através das <strong>Equações de Maxwell</strong>.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Ondas eletromagnéticas</li>
+                    <li><i class="fas fa-check-circle"></i> Luz como onda contínua</li>
+                    <li><i class="fas fa-check-circle"></i> Campos contínuos</li>
+                </ul>
+            </div>
+
+            <div class="classica-item">
+                <h4><i class="fas fa-fire"></i> Termodinâmica Clássica</h4>
+                <p>Estuda o calor, a temperatura e a energia em sistemas macroscópicos. Baseia-se nas <strong>Leis da Termodinâmica</strong> e na <strong>Teoria Cinética dos Gases</strong>.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Energia contínua</li>
+                    <li><i class="fas fa-check-circle"></i> Processos reversíveis</li>
+                    <li><i class="fas fa-check-circle"></i> Entropia e equilíbrio</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRANSIÇÃO ===== -->
+    <div class="transicao-box">
+        <p><i class="fas fa-arrow-right"></i> <span class="destaque">A crise da Física Clássica:</span> No final do século XIX, experimentos como o <strong>efeito fotoelétrico</strong>, a <strong>radiação do corpo negro</strong> e o <strong>experimento de Michelson-Morley</strong> mostraram que a Física Clássica não conseguia explicar fenômenos em escalas muito pequenas ou muito rápidas. Foi assim que a <span class="destaque">Física Quântica</span> e a <strong>Teoria da Relatividade</strong> surgiram para revolucionar nossa compreensão do universo.</p>
+    </div>
+
+    <!-- ===== FÍSICA QUÂNTICA ===== -->
+    <h2 class="section-title" id="quantica">
+        <i class="fas fa-atom"></i> Física Quântica
+        <span class="badge">Séc. XX – Atual</span>
+    </h2>
+
+    <section class="quantica-box">
+        <div class="quantica-header">
+            <h3><i class="fas fa-superpowers"></i> A Revolução Quântica</h3>
+            <span class="quantica-tag">Probabilidade</span>
+        </div>
+        <p style="font-size: 0.95rem; color: #4a3a3a; margin-bottom: 16px;">
+            A <strong>Física Quântica</strong> surgiu no início do século XX para explicar fenômenos que a física clássica 
+            não conseguia descrever. Ela revela um mundo de <strong>probabilidades</strong>, <strong>incertezas</strong> 
+            e <strong>conexões misteriosas</strong>, onde a <strong>observação</strong> desempenha um papel fundamental 
+            e a <strong>realidade</strong> é muito mais estranha do que imaginávamos.
+        </p>
+
+        <div class="quantica-grid">
+            <div class="quantica-item">
+                <h4><i class="fas fa-wave-square"></i> Dualidade Onda-Partícula</h4>
+                <p>Partículas podem se comportar como ondas e vice-versa, dependendo de como são observadas. O <strong>Experimento da Fenda Dupla</strong> é a demonstração mais famosa desse fenômeno.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Partícula <span class="tag">corpúsculo</span></li>
+                    <li><i class="fas fa-check-circle"></i> Onda <span class="tag">frequência</span></li>
+                    <li><i class="fas fa-check-circle"></i> Complementaridade</li>
+                </ul>
+            </div>
+
+            <div class="quantica-item">
+                <h4><i class="fas fa-dice"></i> Princípio da Incerteza</h4>
+                <p>Quanto mais sabemos sobre a posição de uma partícula, menos sabemos sobre seu momento. Proposto por <strong>Werner Heisenberg</strong>, é um dos pilares da mecânica quântica.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Posição × Momento</li>
+                    <li><i class="fas fa-check-circle"></i> Energia × Tempo</li>
+                    <li><i class="fas fa-check-circle"></i> Limite fundamental</li>
+                </ul>
+            </div>
+
+            <div class="quantica-item">
+                <h4><i class="fas fa-link"></i> Emaranhamento Quântico</h4>
+                <p>Partículas emaranhadas permanecem conectadas instantaneamente, independentemente da distância. Einstein chamava isso de <strong>"ação fantasmagórica à distância"</strong>.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Correlação quântica</li>
+                    <li><i class="fas fa-check-circle"></i> Não-localidade</li>
+                    <li><i class="fas fa-check-circle"></i> Aplicações em criptografia</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <!-- ===== EQUIPE ===== -->
     <h2 class="section-title" id="equipe">
@@ -1217,7 +1937,7 @@
         <div class="membro-card">
             <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
             <div class="nome">Prof. Bruno Matos</div>
-            <div class="funcao">Coordenador · Física Quântica</div>
+            <div class="funcao">Coordenador · Física Clássica e Quântica</div>
         </div>
         <div class="membro-card">
             <div class="avatar"><i class="fas fa-user-graduate"></i></div>
@@ -1258,33 +1978,26 @@
 
     <!-- ===== FOOTER ===== -->
     <footer id="recursos" class="recursos-footer">
-        <div class="contato">
-            <i class="fas fa-envelope"></i> <a href="mailto:quantica@moematavora.edu">quantica@moematavora.edu</a>
-            <i class="fas fa-phone" style="margin-left: 4px;"></i> <a href="tel:+5585999999999">(85) 9 9999-9999</a>
-        </div>
         <div class="footer-links">
             <a href="#inicio"><i class="fas fa-arrow-up"></i> Topo</a>
-            <a href="#"><i class="fas fa-file-pdf"></i> Publicações</a>
-            <a href="#"><i class="fas fa-calendar"></i> Calendário</a>
+            <a href="#corpo-negro"><i class="fas fa-fire"></i> Corpo Negro</a>
+            <a href="#fotoeletrico"><i class="fas fa-bolt"></i> Efeito Fotoelétrico</a>
+            <a href="#aplicacoes"><i class="fas fa-microchip"></i> Aplicações</a>
+            <a href="#nao-quantica"><i class="fas fa-ban"></i> O que NÃO é</a>
+            <a href="#comparacao"><i class="fas fa-arrows-left-right"></i> Comparação</a>
+            <a href="#classica"><i class="fas fa-history"></i> Clássica</a>
+            <a href="#quantica"><i class="fas fa-atom"></i> Quântica</a>
+            <a href="#equipe"><i class="fas fa-users"></i> Equipe</a>
         </div>
         <div class="creditos">
             <i class="fas fa-atom"></i> Moema Távora · Instituto Escolar 2026
         </div>
     </footer>
 
-    <!-- ===== INFOS EXTRAS ===== -->
-    <div class="extra-infos">
-        <span><i class="fas fa-map-pin"></i> Lab 3 · 2º andar · Bloco B</span>
-        <span><i class="fas fa-clock"></i> Seg–Sex, 7h–19h</span>
-        <span><i class="fas fa-users-between-lines"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Grupo de pesquisa</a></span>
-        <span><i class="fas fa-file-pdf"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Publicações</a></span>
-        <span><i class="fas fa-chalkboard"></i> <a href="#" style="color: #8B3A3A; text-decoration: none;">Slides das aulas</a></span>
-    </div>
-
-    <!-- ===== AVISO QUÂNTICO ===== -->
-    <div class="aviso-quantico">
+    <!-- ===== AVISO FINAL ===== -->
+    <div class="aviso-final">
         <i class="fas fa-infinity"></i>
-        A realidade é probabilística — e você faz parte dela.
+        Da crise do corpo negro à revolução quântica — a física nunca mais foi a mesma.
         <i class="fas fa-infinity"></i>
     </div>
 
