@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Física Clássica × Quântica | Moema Távora & Instituto Escolar</title>
+    <title>Física Quântica | Moema Távora & Instituto Escolar</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
@@ -86,6 +86,11 @@
             flex-wrap: wrap;
         }
 
+        .logo h1 .emoji-titulo {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
         .logo h1 i {
             color: #8B3A3A;
             font-size: 1.6rem;
@@ -125,6 +130,79 @@
 
         .school-badge i {
             color: #8B3A3A;
+        }
+
+        /* ===== PROFESSOR DESTAQUE ===== */
+        .professor-destaque {
+            background: linear-gradient(135deg, rgba(139, 58, 58, 0.04), rgba(139, 58, 58, 0.01));
+            border-radius: 16px;
+            padding: 12px 18px;
+            margin: 6px 0 14px 0;
+            border: 1px solid rgba(139, 58, 58, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .professor-destaque .prof-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .professor-destaque .prof-info .avatar-prof {
+            font-size: 2.2rem;
+            color: #8B3A3A;
+        }
+
+        .professor-destaque .prof-info .prof-nome {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #2a1a1a;
+        }
+
+        .professor-destaque .prof-info .prof-nome .destaque {
+            color: #8B3A3A;
+        }
+
+        .professor-destaque .prof-info .prof-materias {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 10px;
+            font-size: 0.78rem;
+            color: #5a4a4a;
+        }
+
+        .professor-destaque .prof-info .prof-materias .materia-tag {
+            background: rgba(139, 58, 58, 0.04);
+            padding: 2px 12px;
+            border-radius: 30px;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            font-weight: 500;
+            color: #8B3A3A;
+        }
+
+        .professor-destaque .prof-info .prof-materias .materia-tag i {
+            margin-right: 4px;
+            font-size: 0.7rem;
+        }
+
+        .professor-destaque .prof-badge {
+            background: rgba(139, 58, 58, 0.04);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #8B3A3A;
+            border: 1px solid rgba(139, 58, 58, 0.04);
+            white-space: nowrap;
+        }
+
+        .professor-destaque .prof-badge i {
+            margin-right: 4px;
         }
 
         /* ===== NAVEGAÇÃO ===== */
@@ -221,45 +299,6 @@
         .hero-card .highlight {
             color: #8B3A3A;
             font-weight: 700;
-        }
-
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px 30px;
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid rgba(139, 58, 58, 0.06);
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-stats .stat {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: #5a3a3a;
-        }
-
-        .hero-stats .stat i {
-            color: #8B3A3A;
-            font-size: 1.1rem;
-        }
-
-        .hero-stats .stat strong {
-            color: #2a1a1a;
-            font-weight: 700;
-        }
-
-        .hero-stats .stat .data-destaque {
-            background: rgba(139, 58, 58, 0.06);
-            padding: 2px 10px;
-            border-radius: 30px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #8B3A3A;
-            margin-left: 2px;
         }
 
         /* ===== SEÇÕES ===== */
@@ -1266,6 +1305,11 @@
                 font-size: 1.8rem;
             }
 
+            .professor-destaque {
+                padding: 12px 22px;
+                flex-wrap: nowrap;
+            }
+
             .baloes-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 20px;
@@ -1398,13 +1442,36 @@
     <!-- ===== CABEÇALHO ===== -->
     <header class="top-bar">
         <div class="logo">
-            <h1><i class="fas fa-atom"></i> Física <span>Comparada</span></h1>
+            <h1>
+                <span class="emoji-titulo">⚛️</span>
+                <i class="fas fa-atom"></i> Física <span>Quântica</span>
+            </h1>
             <div class="sub"><i class="fas fa-flask"></i> Moema Távora · Instituto Escolar</div>
         </div>
         <div class="school-badge">
             <i class="fas fa-graduation-cap"></i> Clássica × Quântica
         </div>
     </header>
+
+    <!-- ===== PROFESSOR DESTAQUE ===== -->
+    <div class="professor-destaque">
+        <div class="prof-info">
+            <div class="avatar-prof"><i class="fas fa-chalkboard-user"></i></div>
+            <div>
+                <div class="prof-nome">
+                    <span class="destaque">Prof. Bruno Matos</span>
+                </div>
+                <div class="prof-materias">
+                    <span class="materia-tag"><i class="fas fa-calculator"></i> Matemática</span>
+                    <span class="materia-tag"><i class="fas fa-atom"></i> Física</span>
+                    <span class="materia-tag"><i class="fas fa-user-graduate"></i> Bacharel em Administração</span>
+                </div>
+            </div>
+        </div>
+        <div class="prof-badge">
+            <i class="fas fa-star"></i> Orientador
+        </div>
+    </div>
 
     <!-- ===== NAVEGAÇÃO ===== -->
     <nav class="nav-links" aria-label="Navegação principal">
@@ -1429,10 +1496,6 @@
             revela um universo de <strong>probabilidades</strong>, <strong>incertezas</strong> e 
             <strong>conexões misteriosas</strong>.
         </p>
-        <p style="margin-top: 6px; font-size: 0.9rem; color: #6a4a4a;">
-            <i class="fas fa-arrow-right" style="color: #8B3A3A;"></i> Nossas pesquisas começaram em <strong>agosto de 2026</strong> e estão em andamento!
-        </p>
-       
     </section>
 
     <!-- ===== CORPO NEGRO - PROBLEMÁTICA E CIENTISTAS ===== -->
@@ -1934,11 +1997,6 @@
     </h2>
 
     <div class="equipe-grid">
-        <div class="membro-card">
-            <div class="avatar"><i class="fas fa-user-astronaut"></i></div>
-            <div class="nome">Prof. Bruno Matos</div>
-            <div class="funcao">Coordenador · Física Clássica e Quântica</div>
-        </div>
         <div class="membro-card">
             <div class="avatar"><i class="fas fa-user-graduate"></i></div>
             <div class="nome">Marina Alves</div>
