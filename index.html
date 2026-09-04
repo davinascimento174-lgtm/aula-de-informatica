@@ -1190,103 +1190,6 @@
             white-space: nowrap;
         }
 
-        /* ===== VÍDEOS ===== */
-        .video-links-box {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 22px;
-            padding: 22px 22px 24px;
-            margin-top: 20px;
-            border: 2px solid rgba(139, 58, 58, 0.06);
-        }
-
-        .video-links-box h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #2a1a1a;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-
-        .video-links-box h3 i { color: #8B3A3A; font-size: 1.2rem; }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
-        .video-balao {
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 16px;
-            padding: 14px 16px;
-            border: 1px solid rgba(139, 58, 58, 0.04);
-            transition: 0.25s;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: #2a1a1a;
-            position: relative;
-            box-shadow: 0 2px 4px rgba(139, 58, 58, 0.02);
-        }
-
-        .video-balao::before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 12px solid rgba(255, 255, 255, 0.85);
-            top: -10px;
-            left: 24px;
-            filter: drop-shadow(0 -2px 2px rgba(139, 58, 58, 0.03));
-        }
-
-        .video-balao:hover {
-            border-color: rgba(139, 58, 58, 0.12);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(139, 58, 58, 0.06);
-        }
-
-        .video-balao .video-icon { font-size: 2rem; color: #8B3A3A; width: 3rem; text-align: center; flex-shrink: 0; }
-        .video-balao .video-info { flex: 1; }
-
-        .video-balao .video-info .video-titulo {
-            font-weight: 600;
-            font-size: 0.92rem;
-            color: #2a1a1a;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .video-balao .video-info .video-titulo .play-btn {
-            background: #8B3A3A;
-            color: white;
-            font-size: 0.6rem;
-            font-weight: 700;
-            padding: 2px 10px;
-            border-radius: 30px;
-            letter-spacing: 0.3px;
-        }
-
-        .video-balao .video-info .video-desc { font-size: 0.78rem; color: #6a5a5a; margin-top: 2px; }
-        .video-balao .video-info .video-fonte { font-size: 0.65rem; color: #8B3A3A; font-weight: 500; margin-top: 2px; }
-        .video-balao .video-seta { color: #8B3A3A; font-size: 0.9rem; opacity: 0.5; transition: 0.25s; flex-shrink: 0; }
-        .video-balao:hover .video-seta { opacity: 1; transform: translateX(3px); }
-
-        .video-balao.corpo-negro-video { border-left: 4px solid #8B3A3A; }
-        .video-balao.fotoeletrico-video { border-left: 4px solid #6B2A2A; }
-        .video-balao.aplicacoes-video { border-left: 4px solid #9a4a4a; }
-        .video-balao.nao-quantica-video { border-left: 4px solid #a84a4a; }
-        .video-balao.quantica-video { border-left: 4px solid #7a4a4a; }
-        .video-balao.comparacao-video { border-left: 4px solid #8B3A3A; }
-        .video-balao.classica-video { border-left: 4px solid #6B2A2A; }
-
         /* ===== EQUIPE ===== */
         .equipe-grid {
             display: grid;
@@ -1480,7 +1383,6 @@
             .equipe-grid { grid-template-columns: repeat(3, 1fr); }
             .indice-grid { grid-template-columns: 1fr 1fr 1fr; gap: 8px 16px; }
             .pesquisa-links-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .video-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
             .recursos-footer { flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; }
             .footer-links { justify-content: flex-start; }
             .einstein-quote .quote-text { font-size: 1.4rem; }
@@ -1503,7 +1405,6 @@
             .equipe-grid { grid-template-columns: repeat(4, 1fr); }
             .indice-grid { grid-template-columns: 1fr 1fr 1fr 1fr; gap: 10px 20px; }
             .pesquisa-links-grid { grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-            .video-grid { grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
             .einstein-quote .quote-text { font-size: 1.6rem; padding: 0 30px; }
         }
 
@@ -1596,7 +1497,6 @@
         <a href="#quantica"><i class="fas fa-atom"></i> Quântica</a>
         <a href="#equipe"><i class="fas fa-users"></i> Equipe</a>
         <a href="#links"><i class="fas fa-external-link-alt"></i> Links</a>
-        <a href="#videos"><i class="fas fa-video"></i> Vídeos</a>
     </nav>
 
     <!-- HERO -->
@@ -2050,94 +1950,6 @@
         </div>
     </div>
 
-    <!-- VÍDEOS -->
-    <h2 class="section-title" id="videos"><i class="fas fa-video"></i> Vídeos Explicativos no YouTube <span class="badge">Aprenda Assistindo</span></h2>
-
-    <div class="video-links-box">
-        <h3><i class="fas fa-play-circle"></i> Assista e aprofunde seus conhecimentos</h3>
-        <div class="video-grid">
-            <a href="https://www.youtube.com/watch?v=Up.WZZD4I" target="_blank" rel="noopener" class="video-balao corpo-negro-video">
-                <div class="video-icon"><i class="fas fa-fire"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Radiação do Corpo Negro <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Entenda a catástrofe do ultravioleta e a solução de Planck</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=7U4DzYt8D4E" target="_blank" rel="noopener" class="video-balao fotoeletrico-video">
-                <div class="video-icon"><i class="fas fa-bolt"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Efeito Fotoelétrico - O Nobel de Einstein <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Como Einstein provou a natureza quântica da luz</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=Jz4u4cK0bJ0" target="_blank" rel="noopener" class="video-balao aplicacoes-video">
-                <div class="video-icon"><i class="fas fa-microchip"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Aplicações da Mecânica Quântica <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Como a quântica está presente no seu dia a dia</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=0qHjL5rBk1I" target="_blank" rel="noopener" class="video-balao nao-quantica-video">
-                <div class="video-icon"><i class="fas fa-ban"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">O que NÃO é Mecânica Quântica <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Desmistificando pseudociências e charlatanismo</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=eA1E2HGdbKg" target="_blank" rel="noopener" class="video-balao quantica-video">
-                <div class="video-icon"><i class="fas fa-atom"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">O que é Mecânica Quântica? <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Introdução completa aos fundamentos da quântica</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=blRyVsvoK_0" target="_blank" rel="noopener" class="video-balao comparacao-video">
-                <div class="video-icon"><i class="fas fa-arrows-left-right"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Comparação: Clássica × Quântica <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Entenda as diferenças fundamentais entre as duas físicas</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=7kH_3C0WH60" target="_blank" rel="noopener" class="video-balao classica-video">
-                <div class="video-icon"><i class="fas fa-history"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Física Clássica - Fundamentos <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Os pilares da física antes da revolução quântica</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-
-            <a href="https://www.youtube.com/watch?v=USwTfSJ6dD4" target="_blank" rel="noopener" class="video-balao quantica-video">
-                <div class="video-icon"><i class="fas fa-superpowers"></i></div>
-                <div class="video-info">
-                    <div class="video-titulo">Física Quântica - Visão Geral <span class="play-btn"><i class="fas fa-play"></i> Assistir</span></div>
-                    <div class="video-desc">Uma jornada pelos conceitos mais importantes da quântica</div>
-                    <div class="video-fonte"><i class="fab fa-youtube"></i> YouTube</div>
-                </div>
-                <div class="video-seta"><i class="fas fa-chevron-right"></i></div>
-            </a>
-        </div>
-    </div>
-
     <!-- EQUIPE -->
     <h2 class="section-title" id="equipe"><i class="fas fa-users"></i> Nossa Equipe <span class="badge">Pesquisadores</span></h2>
 
@@ -2204,7 +2016,6 @@
             <a href="#classica"><i class="fas fa-history"></i> Física Clássica</a>
             <a href="#quantica"><i class="fas fa-atom"></i> Física Quântica</a>
             <a href="#links"><i class="fas fa-external-link-alt"></i> Links Acadêmicos</a>
-            <a href="#videos"><i class="fas fa-video"></i> Vídeos Explicativos</a>
             <a href="#equipe"><i class="fas fa-users"></i> Nossa Equipe</a>
         </div>
     </div>
@@ -2221,7 +2032,6 @@
             <a href="#classica"><i class="fas fa-history"></i> Clássica</a>
             <a href="#quantica"><i class="fas fa-atom"></i> Quântica</a>
             <a href="#links"><i class="fas fa-external-link-alt"></i> Links</a>
-            <a href="#videos"><i class="fas fa-video"></i> Vídeos</a>
             <a href="#equipe"><i class="fas fa-users"></i> Equipe</a>
         </div>
         <div class="creditos"><i class="fas fa-atom"></i> Moema Távora · Instituto Escolar 2026</div>
